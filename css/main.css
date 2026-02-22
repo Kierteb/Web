@@ -506,6 +506,8 @@
 
   .hero--dark {
     background-color: var(--color-bg);
+    background-image: radial-gradient(circle, rgba(79, 91, 213, 0.14) 1px, transparent 1px);
+    background-size: 28px 28px;
   }
 
   .hero--page {
@@ -552,6 +554,49 @@
     block-size: 3px;
     background-color: var(--color-accent);
     margin-block-end: var(--space-8);
+  }
+
+  /* Hero two-column layout */
+  .hero__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+    align-items: center;
+  }
+
+  .hero__graphic {
+    display: none;
+  }
+
+  @media (width >= 64rem) {
+    .hero__inner {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .hero__graphic {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  }
+
+  .hero__graphic-svg {
+    inline-size: 100%;
+    max-inline-size: 480px;
+    block-size: auto;
+  }
+
+  @keyframes cursor-blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+  }
+
+  .cursor-blink {
+    animation: cursor-blink 1.2s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cursor-blink { animation: none; }
   }
 
 
