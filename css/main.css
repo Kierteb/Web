@@ -500,6 +500,8 @@
     padding-block: clamp(var(--space-20), 12vw, var(--space-32));
     position: relative;
     overflow: hidden;
+    background-image: radial-gradient(circle, rgba(79, 91, 213, 0.14) 1px, transparent 1px);
+    background-size: 28px 28px;
   }
 
   .hero::before {
@@ -514,8 +516,6 @@
 
   .hero--dark {
     background-color: var(--color-bg);
-    background-image: radial-gradient(circle, rgba(79, 91, 213, 0.14) 1px, transparent 1px);
-    background-size: 28px 28px;
   }
 
   .hero--page {
