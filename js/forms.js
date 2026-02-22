@@ -96,46 +96,33 @@ export function initForms() {
       submitBtn.textContent = 'Sending…';
     }
 
-    /* ---------------------------------------------------------------
-       Connect to your form backend here.
-       Options:
-         - Formspree: change form action to https://formspree.io/f/YOUR_ID
-           and remove this JS submit handler (let the form POST naturally).
-         - Netlify Forms: add netlify attribute to <form> element.
-         - Custom fetch to your own endpoint.
-
-       Example with fetch:
-
-       fetch(form.action, {
-         method: 'POST',
-         body: new FormData(form),
-         headers: { 'Accept': 'application/json' }
-       })
-       .then(function (res) {
-         if (res.ok) {
-           showSuccess();
-         } else {
-           showError();
-         }
-       })
-       .catch(showError);
-
-    --------------------------------------------------------------- */
-
-    // Placeholder: log form data to console
-    console.info('Form data:', Object.fromEntries(new FormData(form)));
-
-    // Simulate success (remove this once real backend is connected)
-    setTimeout(function () {
-      if (successMsg) {
-        form.style.display = 'none';
-        successMsg.setAttribute('data-visible', 'true');
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function (res) {
+      if (res.ok) {
+        if (successMsg) {
+          form.style.display = 'none';
+          successMsg.setAttribute('data-visible', 'true');
+        } else if (submitBtn) {
+          submitBtn.textContent = 'Enquiry Sent!';
+        }
       } else {
         if (submitBtn) {
           submitBtn.disabled = false;
-          submitBtn.textContent = 'Enquiry Sent!';
+          submitBtn.textContent = 'Send Enquiry';
         }
+        alert('Something went wrong. Please try again or email us directly.');
       }
-    }, 800);
+    })
+    .catch(function () {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Enquiry';
+      }
+      alert('Something went wrong. Please try again or email us directly.');
+    });
   }
 }
