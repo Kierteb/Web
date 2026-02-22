@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" fill="none" aria-hidden="true">
+  <!-- Gold accent mark -->
+  <rect x="0" y="8" width="4" height="32" fill="#e8a400"/>
+  <!-- Business name wordmark — replace [BUSINESS NAME] with your actual name -->
+  <text x="14" y="34" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" letter-spacing="-0.5" fill="#ffffff">[BUSINESS NAME]</text>
+</svg>

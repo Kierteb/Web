@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Hand-coded websites built for real UK businesses. Browse our portfolio of work for construction, trade, hospitality, and professional services clients.">
+
+  <title>Our Work | [BUSINESS NAME]</title>
+
+  <link rel="canonical" href="https://[WEBSITE-URL]/work.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Our Work | [BUSINESS NAME]">
+  <meta property="og:description" content="Hand-coded websites built for real UK businesses. Browse our portfolio of work.">
+  <meta property="og:image" content="https://[WEBSITE-URL]/images/og-image.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://[WEBSITE-URL]/work.html">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ===== SITE HEADER ===== -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav" aria-label="Primary">
+        <a href="/" class="nav__logo" aria-label="[BUSINESS NAME] — Home">
+          <img src="/images/logo.svg" alt="[BUSINESS NAME]" width="160" height="40">
+        </a>
+
+        <ul class="nav__list" id="primary-nav-list" role="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/services.html#pricing">Pricing</a></li>
+          <li><a href="/work.html" aria-current="page">Our Work</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+
+        <a href="/contact.html" class="button nav__cta" aria-label="Get a quote for your website">Get a Quote</a>
+
+        <button
+          class="nav__toggle"
+          aria-expanded="false"
+          aria-controls="primary-nav-list"
+          aria-label="Open navigation menu"
+          hidden
+        >
+          <svg aria-hidden="true" focusable="false" width="22" height="22" viewBox="0 0 22 22">
+            <rect y="4"  width="22" height="2" fill="currentColor" rx="1"/>
+            <rect y="10" width="22" height="2" fill="currentColor" rx="1"/>
+            <rect y="16" width="22" height="2" fill="currentColor" rx="1"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main id="main-content">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero hero--page" aria-labelledby="work-hero-heading">
+      <div class="container">
+        <span class="hero__kicker">Portfolio</span>
+        <h1 id="work-hero-heading">Our Work</h1>
+        <p class="hero__subtext">Hand-coded websites built for real UK businesses.</p>
+      </div>
+    </section>
+
+    <!-- ===== PORTFOLIO GRID ===== -->
+    <section aria-labelledby="portfolio-heading">
+      <div class="container">
+        <h2 id="portfolio-heading" class="sr-only">Portfolio projects</h2>
+
+        <!--
+          TO ADD A PROJECT:
+          1. Duplicate one of the <article class="portfolio-card"> blocks below.
+          2. Replace the screenshot src with your actual image path (16:9 ratio, WebP format recommended).
+          3. Update the aria-label on the <img> to describe the screenshot.
+          4. Update the <span class="portfolio-card__tag"> with the industry.
+          5. Update the <h3> with the client/project name.
+          6. Update the <p class="portfolio-card__desc"> with a one-line description.
+          7. Update the <a class="portfolio-card__link"> href with the live URL.
+          8. Remove the thumb-placeholder div and uncomment the <img> tag.
+        -->
+
+        <ul class="card-grid card-grid--2col" role="list">
+
+          <!-- PROJECT 1: BAAM Materials -->
+          <li>
+            <article class="portfolio-card" data-reveal>
+              <div class="portfolio-card__thumb">
+                <!-- Replace with real screenshot:
+                <img
+                  src="/images/work/baam-materials.webp"
+                  alt="Screenshot of BAAM Materials website homepage"
+                  width="800"
+                  height="450"
+                  loading="lazy"
+                  decoding="async"
+                >
+                -->
+                <div class="portfolio-card__thumb-placeholder" aria-hidden="true">
+                  <svg viewBox="0 0 48 48" fill="none" focusable="false">
+                    <rect x="4" y="8" width="40" height="32" rx="2" stroke="currentColor" stroke-width="2"/>
+                    <path d="M4 16h40" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="10" cy="12" r="1.5" fill="currentColor"/>
+                    <circle cx="15" cy="12" r="1.5" fill="currentColor"/>
+                    <circle cx="20" cy="12" r="1.5" fill="currentColor"/>
+                  </svg>
+                  <span>Screenshot coming soon</span>
+                </div>
+              </div>
+              <div class="portfolio-card__body">
+                <span class="portfolio-card__tag">Construction</span>
+                <h3 class="portfolio-card__title">BAAM Materials</h3>
+                <p class="portfolio-card__desc">Direct-to-site materials supplier. 3-page trade website with pricing table and contact form.</p>
+                <a href="#" class="portfolio-card__link" aria-label="View BAAM Materials website (link placeholder)">View Site →</a>
+              </div>
+            </article>
+          </li>
+
+          <!-- PROJECT 2: Placeholder -->
+          <li>
+            <article class="portfolio-card" data-reveal data-delay="1">
+              <div class="portfolio-card__thumb">
+                <!-- Replace with real screenshot -->
+                <div class="portfolio-card__thumb-placeholder" aria-hidden="true">
+                  <svg viewBox="0 0 48 48" fill="none" focusable="false">
+                    <rect x="4" y="8" width="40" height="32" rx="2" stroke="currentColor" stroke-width="2"/>
+                    <path d="M4 16h40" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="10" cy="12" r="1.5" fill="currentColor"/>
+                    <circle cx="15" cy="12" r="1.5" fill="currentColor"/>
+                    <circle cx="20" cy="12" r="1.5" fill="currentColor"/>
+                  </svg>
+                  <span>Coming soon</span>
+                </div>
+              </div>
+              <div class="portfolio-card__body">
+                <span class="portfolio-card__tag">Trade</span>
+                <h3 class="portfolio-card__title">Project Coming Soon</h3>
+                <p class="portfolio-card__desc">More work to be added as new projects complete. Check back soon.</p>
+                <a href="/contact.html" class="portfolio-card__link">Start Your Project →</a>
+              </div>
+            </article>
+          </li>
+
+          <!-- PROJECT 3: Placeholder -->
+          <li>
+            <article class="portfolio-card" data-reveal data-delay="2">
+              <div class="portfolio-card__thumb">
+                <!-- Replace with real screenshot -->
+                <div class="portfolio-card__thumb-placeholder" aria-hidden="true">
+                  <svg viewBox="0 0 48 48" fill="none" focusable="false">
+                    <rect x="4" y="8" width="40" height="32" rx="2" stroke="currentColor" stroke-width="2"/>
+                    <path d="M4 16h40" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="10" cy="12" r="1.5" fill="currentColor"/>
+                    <circle cx="15" cy="12" r="1.5" fill="currentColor"/>
+                    <circle cx="20" cy="12" r="1.5" fill="currentColor"/>
+                  </svg>
+                  <span>Coming soon</span>
+                </div>
+              </div>
+              <div class="portfolio-card__body">
+                <span class="portfolio-card__tag">Hospitality</span>
+                <h3 class="portfolio-card__title">Project Coming Soon</h3>
+                <p class="portfolio-card__desc">More work to be added as new projects complete. Check back soon.</p>
+                <a href="/contact.html" class="portfolio-card__link">Start Your Project →</a>
+              </div>
+            </article>
+          </li>
+
+          <!-- PROJECT 4: Placeholder -->
+          <li>
+            <article class="portfolio-card" data-reveal data-delay="3">
+              <div class="portfolio-card__thumb">
+                <!-- Replace with real screenshot -->
+                <div class="portfolio-card__thumb-placeholder" aria-hidden="true">
+                  <svg viewBox="0 0 48 48" fill="none" focusable="false">
+                    <rect x="4" y="8" width="40" height="32" rx="2" stroke="currentColor" stroke-width="2"/>
+                    <path d="M4 16h40" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="10" cy="12" r="1.5" fill="currentColor"/>
+                    <circle cx="15" cy="12" r="1.5" fill="currentColor"/>
+                    <circle cx="20" cy="12" r="1.5" fill="currentColor"/>
+                  </svg>
+                  <span>Coming soon</span>
+                </div>
+              </div>
+              <div class="portfolio-card__body">
+                <span class="portfolio-card__tag">Professional Services</span>
+                <h3 class="portfolio-card__title">Project Coming Soon</h3>
+                <p class="portfolio-card__desc">More work to be added as new projects complete. Check back soon.</p>
+                <a href="/contact.html" class="portfolio-card__link">Start Your Project →</a>
+              </div>
+            </article>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="bg-surface" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-header__kicker">Client feedback</span>
+          <h2 id="testimonials-heading">What Clients Say</h2>
+        </div>
+
+        <!--
+          Replace these placeholder testimonials with real client quotes.
+          Keep the blockquote / figcaption structure for semantic correctness.
+        -->
+        <ul class="card-grid card-grid--2col" role="list">
+
+          <li class="testimonial" data-reveal>
+            <!-- Replace with real testimonial -->
+            <figure>
+              <blockquote>
+                "Placeholder testimonial — replace with a real client quote. Something specific about how the website helped their business, ideally mentioning leads, calls, or customers."
+              </blockquote>
+              <figcaption class="testimonial__author">
+                <span class="testimonial__name">[Client Name]</span>
+                <span class="testimonial__role">[Job Title], [Company Name]</span>
+              </figcaption>
+            </figure>
+          </li>
+
+          <li class="testimonial" data-reveal data-delay="1">
+            <!-- Replace with real testimonial -->
+            <figure>
+              <blockquote>
+                "Placeholder testimonial — replace with a real client quote. Something specific about how the website helped their business, ideally mentioning leads, calls, or customers."
+              </blockquote>
+              <figcaption class="testimonial__author">
+                <span class="testimonial__name">[Client Name]</span>
+                <span class="testimonial__role">[Job Title], [Company Name]</span>
+              </figcaption>
+            </figure>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta-band" aria-labelledby="work-cta-heading">
+      <div class="container">
+        <h2 id="work-cta-heading">Want to Be Featured Here?</h2>
+        <p>Get in touch and let's talk about what your website needs to do for your business.</p>
+        <div class="cta-band__actions">
+          <a href="/contact.html" class="button button--large">Start the Conversation</a>
+          <a href="/services.html" class="button button--outline button--large">View Packages</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== SITE FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div class="site-footer__brand">
+          <a href="/" class="footer-logo" aria-label="[BUSINESS NAME] — Home">
+            <img src="/images/logo.svg" alt="[BUSINESS NAME]" width="140" height="36">
+          </a>
+          <p class="site-footer__tagline">Hand-coded websites for UK businesses that mean business.</p>
+        </div>
+
+        <div>
+          <p class="site-footer__col-heading">Quick Links</p>
+          <nav aria-label="Footer quick links">
+            <ul class="site-footer__links" role="list">
+              <li><a href="/">Home</a></li>
+              <li><a href="/services.html">Services</a></li>
+              <li><a href="/work.html">Our Work</a></li>
+              <li><a href="/about.html">About</a></li>
+              <li><a href="/contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div>
+          <p class="site-footer__col-heading">Services</p>
+          <nav aria-label="Footer services links">
+            <ul class="site-footer__links" role="list">
+              <li><a href="/services.html#starter">Starter — £599</a></li>
+              <li><a href="/services.html#business">Business — £999</a></li>
+              <li><a href="/services.html#professional">Professional — £1,499</a></li>
+              <li><a href="/services.html#retainer">Monthly Retainer</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div>
+          <p class="site-footer__col-heading">Contact</p>
+          <address>
+            <ul class="site-footer__links" role="list">
+              <li><a href="tel:[PHONE NUMBER]">[PHONE NUMBER]</a></li>
+              <li><a href="mailto:[EMAIL ADDRESS]">[EMAIL ADDRESS]</a></li>
+              <li>United Kingdom</li>
+            </ul>
+          </address>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p class="site-footer__copy">
+          &copy; <time datetime="2026">2026</time> [BUSINESS NAME]. All rights reserved.
+        </p>
+        <p class="site-footer__sign-off">Hand-coded with precision.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { initNav } from '/js/nav.js';
+    import { initScrollReveal } from '/js/reveal.js';
+    initNav();
+    initScrollReveal();
+  </script>
+
+</body>
+</html>

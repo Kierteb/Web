@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Get in touch with [BUSINESS NAME]. No jargon, no hard sell — tell us about your business and we'll come back with an honest quote within 24 hours.">
+
+  <title>Contact | [BUSINESS NAME]</title>
+
+  <link rel="canonical" href="https://[WEBSITE-URL]/contact.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Contact | [BUSINESS NAME]">
+  <meta property="og:description" content="Get in touch. No jargon, no hard sell — tell us about your business and we'll come back with an honest quote within 24 hours.">
+  <meta property="og:image" content="https://[WEBSITE-URL]/images/og-image.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://[WEBSITE-URL]/contact.html">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/main.css">
+
+  <!-- Schema.org LocalBusiness JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "[BUSINESS NAME]",
+    "description": "Hand-coded bespoke websites for UK small businesses",
+    "url": "https://[WEBSITE-URL]",
+    "telephone": "[PHONE NUMBER]",
+    "email": "[EMAIL ADDRESS]",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "GB"
+    },
+    "priceRange": "££",
+    "areaServed": "United Kingdom"
+  }
+  </script>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ===== SITE HEADER ===== -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav" aria-label="Primary">
+        <a href="/" class="nav__logo" aria-label="[BUSINESS NAME] — Home">
+          <img src="/images/logo.svg" alt="[BUSINESS NAME]" width="160" height="40">
+        </a>
+
+        <ul class="nav__list" id="primary-nav-list" role="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/services.html#pricing">Pricing</a></li>
+          <li><a href="/work.html">Our Work</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html" aria-current="page">Contact</a></li>
+        </ul>
+
+        <a href="/contact.html" class="button nav__cta" aria-label="Get a quote for your website" aria-current="page">Get a Quote</a>
+
+        <button
+          class="nav__toggle"
+          aria-expanded="false"
+          aria-controls="primary-nav-list"
+          aria-label="Open navigation menu"
+          hidden
+        >
+          <svg aria-hidden="true" focusable="false" width="22" height="22" viewBox="0 0 22 22">
+            <rect y="4"  width="22" height="2" fill="currentColor" rx="1"/>
+            <rect y="10" width="22" height="2" fill="currentColor" rx="1"/>
+            <rect y="16" width="22" height="2" fill="currentColor" rx="1"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main id="main-content">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero hero--page" aria-labelledby="contact-hero-heading">
+      <div class="container">
+        <span class="hero__kicker">Let's talk</span>
+        <h1 id="contact-hero-heading">Get in Touch</h1>
+        <p class="hero__subtext">No jargon. No hard sell. Tell us about your business and what you need — we'll come back to you with an honest quote within 24 hours.</p>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section aria-labelledby="contact-form-heading">
+      <div class="container">
+        <div class="contact-layout">
+          <div>
+            <h2 id="contact-form-heading" class="sr-only">Send an enquiry</h2>
+
+            <!-- Form wrapper used by forms.js to show success message -->
+            <div data-form-wrapper>
+
+              <!--
+                Connect this form to your backend before going live.
+                Options:
+                  - Formspree: replace action with https://formspree.io/f/YOUR_FORM_ID
+                  - Netlify Forms: add netlify attribute and data-netlify="true"
+                  - Custom backend: update the fetch in forms.js
+              -->
+              <form
+                class="form"
+                action="#"
+                method="POST"
+                novalidate
+                aria-label="Contact enquiry form"
+              >
+                <div class="form-row">
+                  <div class="field">
+                    <label for="full-name">
+                      Full Name
+                      <span class="field__required" aria-hidden="true">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="full-name"
+                      name="full-name"
+                      autocomplete="name"
+                      required
+                      aria-required="true"
+                      aria-describedby="full-name-error"
+                      placeholder="Jane Smith"
+                    >
+                    <span class="field__error" id="full-name-error" role="alert" aria-live="polite"></span>
+                  </div>
+
+                  <div class="field">
+                    <label for="business-name">
+                      Business Name
+                      <span class="field__required" aria-hidden="true">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="business-name"
+                      name="business-name"
+                      autocomplete="organization"
+                      required
+                      aria-required="true"
+                      aria-describedby="business-name-error"
+                      placeholder="Smith Plumbing Ltd"
+                    >
+                    <span class="field__error" id="business-name-error" role="alert" aria-live="polite"></span>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="field">
+                    <label for="email">
+                      Email Address
+                      <span class="field__required" aria-hidden="true">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      autocomplete="email"
+                      required
+                      aria-required="true"
+                      aria-describedby="email-error"
+                      placeholder="jane@smithplumbing.co.uk"
+                    >
+                    <span class="field__error" id="email-error" role="alert" aria-live="polite"></span>
+                  </div>
+
+                  <div class="field">
+                    <label for="phone">
+                      Phone Number
+                      <span class="text-muted" style="font-weight:400;text-transform:none;letter-spacing:0"> (optional)</span>
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      autocomplete="tel"
+                      aria-describedby="phone-error"
+                      placeholder="07700 900000"
+                    >
+                    <span class="field__error" id="phone-error" role="alert" aria-live="polite"></span>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="package">Which package interests you?</label>
+                  <select id="package" name="package" autocomplete="off">
+                    <option value="">Not sure yet</option>
+                    <option value="starter">Starter — £599</option>
+                    <option value="business">Business — £999</option>
+                    <option value="professional">Professional — £1,499</option>
+                    <option value="retainer">Monthly Retainer</option>
+                    <option value="other">Something else</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="project-details">
+                    Tell us about your project
+                    <span class="field__required" aria-hidden="true">*</span>
+                  </label>
+                  <textarea
+                    id="project-details"
+                    name="project-details"
+                    rows="6"
+                    required
+                    aria-required="true"
+                    aria-describedby="project-details-error"
+                    placeholder="Tell us what your business does, what you need the website to achieve, and anything else that's useful..."
+                  ></textarea>
+                  <span class="field__error" id="project-details-error" role="alert" aria-live="polite"></span>
+                </div>
+
+                <button type="submit" class="button button--large">Send Enquiry</button>
+              </form>
+
+              <!-- Success message — shown by forms.js after submission -->
+              <div class="form-success" role="status" aria-live="polite">
+                <p>Thank you — your enquiry has been sent. We'll be in touch within 24 hours.</p>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Direct contact info alongside the form -->
+          <aside aria-labelledby="direct-contact-heading">
+            <h2 id="direct-contact-heading">Or Reach Us Directly</h2>
+            <div class="contact-info">
+              <!-- Replace [PHONE NUMBER] with your real phone number -->
+              <div class="contact-info__item">
+                <span class="contact-info__label">Phone</span>
+                <a href="tel:[PHONE NUMBER]" class="contact-info__value">[PHONE NUMBER]</a>
+              </div>
+              <!-- Replace [EMAIL ADDRESS] with your real email address -->
+              <div class="contact-info__item">
+                <span class="contact-info__label">Email</span>
+                <a href="mailto:[EMAIL ADDRESS]" class="contact-info__value">[EMAIL ADDRESS]</a>
+              </div>
+              <div class="contact-info__item">
+                <span class="contact-info__label">Based in</span>
+                <span class="contact-info__value" style="cursor:default">United Kingdom</span>
+              </div>
+            </div>
+            <p class="contact-info__note">We aim to respond to all enquiries within 24 hours. If your project is urgent, please call directly.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== SITE FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div class="site-footer__brand">
+          <a href="/" class="footer-logo" aria-label="[BUSINESS NAME] — Home">
+            <img src="/images/logo.svg" alt="[BUSINESS NAME]" width="140" height="36">
+          </a>
+          <p class="site-footer__tagline">Hand-coded websites for UK businesses that mean business.</p>
+        </div>
+
+        <div>
+          <p class="site-footer__col-heading">Quick Links</p>
+          <nav aria-label="Footer quick links">
+            <ul class="site-footer__links" role="list">
+              <li><a href="/">Home</a></li>
+              <li><a href="/services.html">Services</a></li>
+              <li><a href="/work.html">Our Work</a></li>
+              <li><a href="/about.html">About</a></li>
+              <li><a href="/contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div>
+          <p class="site-footer__col-heading">Services</p>
+          <nav aria-label="Footer services links">
+            <ul class="site-footer__links" role="list">
+              <li><a href="/services.html#starter">Starter — £599</a></li>
+              <li><a href="/services.html#business">Business — £999</a></li>
+              <li><a href="/services.html#professional">Professional — £1,499</a></li>
+              <li><a href="/services.html#retainer">Monthly Retainer</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div>
+          <p class="site-footer__col-heading">Contact</p>
+          <address>
+            <ul class="site-footer__links" role="list">
+              <li><a href="tel:[PHONE NUMBER]">[PHONE NUMBER]</a></li>
+              <li><a href="mailto:[EMAIL ADDRESS]">[EMAIL ADDRESS]</a></li>
+              <li>United Kingdom</li>
+            </ul>
+          </address>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p class="site-footer__copy">
+          &copy; <time datetime="2026">2026</time> [BUSINESS NAME]. All rights reserved.
+        </p>
+        <p class="site-footer__sign-off">Hand-coded with precision.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { initNav } from '/js/nav.js';
+    import { initScrollReveal } from '/js/reveal.js';
+    import { initForms } from '/js/forms.js';
+    initNav();
+    initScrollReveal();
+    initForms();
+  </script>
+
+</body>
+</html>

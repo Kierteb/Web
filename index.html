@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Hand-coded websites for UK small businesses, sole traders, and tradespeople. No templates. No page builders. Fast, professional, and built to last.">
+
+  <title>Home | [BUSINESS NAME]</title>
+
+  <link rel="canonical" href="https://[WEBSITE-URL]/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Home | [BUSINESS NAME]">
+  <meta property="og:description" content="Hand-coded websites for UK small businesses, sole traders, and tradespeople. No templates. No page builders. Fast, professional, and built to last.">
+  <meta property="og:image" content="https://[WEBSITE-URL]/images/og-image.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://[WEBSITE-URL]/">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/main.css">
+
+  <!-- Schema.org LocalBusiness JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "[BUSINESS NAME]",
+    "description": "Hand-coded bespoke websites for UK small businesses",
+    "url": "https://[WEBSITE-URL]",
+    "telephone": "[PHONE NUMBER]",
+    "email": "[EMAIL ADDRESS]",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "GB"
+    },
+    "priceRange": "££",
+    "areaServed": "United Kingdom"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Skip to main content -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ===== SITE HEADER ===== -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav" aria-label="Primary">
+        <a href="/" class="nav__logo" aria-label="[BUSINESS NAME] — Home">
+          <img src="/images/logo.svg" alt="[BUSINESS NAME]" width="160" height="40">
+        </a>
+
+        <ul class="nav__list" id="primary-nav-list" role="list">
+          <li><a href="/" aria-current="page">Home</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/services.html#pricing">Pricing</a></li>
+          <li><a href="/work.html">Our Work</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+
+        <a href="/contact.html" class="button nav__cta" aria-label="Get a quote for your website">Get a Quote</a>
+
+        <button
+          class="nav__toggle"
+          aria-expanded="false"
+          aria-controls="primary-nav-list"
+          aria-label="Open navigation menu"
+          hidden
+        >
+          <svg aria-hidden="true" focusable="false" width="22" height="22" viewBox="0 0 22 22">
+            <rect y="4"  width="22" height="2" fill="currentColor" rx="1"/>
+            <rect y="10" width="22" height="2" fill="currentColor" rx="1"/>
+            <rect y="16" width="22" height="2" fill="currentColor" rx="1"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main id="main-content">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero hero--dark" aria-labelledby="hero-heading">
+      <div class="container">
+        <span class="hero__accent-bar" aria-hidden="true"></span>
+        <h1 id="hero-heading">Your Business Deserves a Proper Website</h1>
+        <p class="hero__subtext">Hand-coded, fast, and built to last. No templates. No page builders. Just clean, professional websites that work.</p>
+        <div class="hero__actions">
+          <a href="/work.html" class="button button--large">See Our Work</a>
+          <a href="/contact.html" class="button button--outline button--large">Get a Quote</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TRUST BAR ===== -->
+    <section class="trust-bar" aria-labelledby="trust-heading">
+      <h2 id="trust-heading" class="sr-only">Why clients trust us</h2>
+      <div class="container">
+        <ul class="trust-bar__list" role="list">
+          <li class="trust-bar__item">Hand-coded from scratch</li>
+          <li class="trust-bar__item">Mobile-first &amp; fast-loading</li>
+          <li class="trust-bar__item">UK-based, human support</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== WHY CHOOSE US ===== -->
+    <section class="bg-surface" aria-labelledby="why-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-header__kicker">Built different</span>
+          <h2 id="why-heading">Built Different. Because Your Business Is.</h2>
+        </div>
+        <ul class="card-grid" role="list">
+          <li class="card" data-reveal>
+            <svg class="card__icon" aria-hidden="true" focusable="false" viewBox="0 0 40 40" fill="none">
+              <path d="M8 8h24M8 16h16M8 24h20M8 32h12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+            <h3 class="card__title">No Templates</h3>
+            <p class="card__body">Every site is coded by hand, from a blank file. Your website looks like your business, not a theme someone else bought.</p>
+          </li>
+          <li class="card" data-reveal data-delay="1">
+            <svg class="card__icon" aria-hidden="true" focusable="false" viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M20 12v8l5 5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+            <h3 class="card__title">Built to Perform</h3>
+            <p class="card__body">Clean code means fast load times. Fast load times mean better Google rankings and fewer customers bouncing before they call you.</p>
+          </li>
+          <li class="card" data-reveal data-delay="2">
+            <svg class="card__icon" aria-hidden="true" focusable="false" viewBox="0 0 40 40" fill="none">
+              <path d="M20 6L34 12v12c0 7-6 12-14 16C12 36 6 31 6 24V12L20 6z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+              <path d="M14 20l4 4 8-8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h3 class="card__title">You Own Everything</h3>
+            <p class="card__body">No platform lock-in. No monthly fees just to keep your site alive. Your code, your domain, your asset.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== HOW IT WORKS ===== -->
+    <section aria-labelledby="process-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-header__kicker">The process</span>
+          <h2 id="process-heading">Simple Process. Professional Result.</h2>
+        </div>
+        <ol class="steps" role="list">
+          <li class="step" data-reveal>
+            <div class="step__content">
+              <span class="step__accent" aria-hidden="true"></span>
+              <h3 class="step__title">Discovery</h3>
+              <p class="step__body">Tell us about your business, your customers, and what you want your website to do.</p>
+            </div>
+          </li>
+          <li class="step" data-reveal data-delay="1">
+            <div class="step__content">
+              <span class="step__accent" aria-hidden="true"></span>
+              <h3 class="step__title">Design &amp; Build</h3>
+              <p class="step__body">We design and code your site from scratch, keeping you updated throughout.</p>
+            </div>
+          </li>
+          <li class="step" data-reveal data-delay="2">
+            <div class="step__content">
+              <span class="step__accent" aria-hidden="true"></span>
+              <h3 class="step__title">Review &amp; Refine</h3>
+              <p class="step__body">You review the site, request changes, and we refine until it's exactly right.</p>
+            </div>
+          </li>
+          <li class="step" data-reveal data-delay="3">
+            <div class="step__content">
+              <span class="step__accent" aria-hidden="true"></span>
+              <h3 class="step__title">Launch</h3>
+              <p class="step__body">We connect your domain and go live. Your site is fast, indexed by Google, and ready for customers.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== PRICING SNAPSHOT ===== -->
+    <section class="bg-surface" id="pricing" aria-labelledby="pricing-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-header__kicker">Pricing</span>
+          <h2 id="pricing-heading">Transparent Pricing. No Surprises.</h2>
+        </div>
+        <ul class="card-grid" role="list">
+          <li class="pricing-card" data-reveal>
+            <p class="pricing-card__tier">Starter</p>
+            <p class="pricing-card__price"><sup>£</sup>599</p>
+            <p class="pricing-card__ideal">Ideal for sole traders and new businesses</p>
+            <p class="pricing-card__feature">3 pages, mobile responsive, domain connection</p>
+            <a href="/contact.html" class="button">Get Started</a>
+          </li>
+          <li class="pricing-card pricing-card--featured" data-reveal data-delay="1">
+            <p class="pricing-card__badge" aria-label="Most popular package">Most Popular</p>
+            <p class="pricing-card__tier">Business</p>
+            <p class="pricing-card__price"><sup>£</sup>999</p>
+            <p class="pricing-card__ideal">Ideal for established small businesses</p>
+            <p class="pricing-card__feature">5 pages, contact form, Google Maps, SEO setup</p>
+            <a href="/contact.html" class="button">Get Started</a>
+          </li>
+          <li class="pricing-card" data-reveal data-delay="2">
+            <p class="pricing-card__tier">Professional</p>
+            <p class="pricing-card__price"><sup>£</sup>1,499</p>
+            <p class="pricing-card__ideal">Ideal for growing businesses wanting more</p>
+            <p class="pricing-card__feature">7 pages, blog section, analytics, speed optimised</p>
+            <a href="/contact.html" class="button">Get Started</a>
+          </li>
+        </ul>
+        <p class="pricing-note">
+          All prices exclude VAT. Full pricing on our Services page.
+          <a href="/services.html#pricing">See full pricing →</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== PORTFOLIO TEASER ===== -->
+    <section aria-labelledby="recent-work-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-header__kicker">Portfolio</span>
+          <h2 id="recent-work-heading">Recent Work</h2>
+        </div>
+
+        <!-- Replace with real project screenshots when available -->
+        <ul class="card-grid card-grid--2col" role="list">
+
+          <!-- TO UPDATE: replace screenshot src, project name, industry and link for each card -->
+          <li class="portfolio-card" data-reveal>
+            <div class="portfolio-card__thumb">
+              <!-- Replace with real screenshot -->
+              <div class="portfolio-card__thumb-placeholder" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none" focusable="false">
+                  <rect x="4" y="8" width="40" height="32" rx="2" stroke="currentColor" stroke-width="2"/>
+                  <path d="M4 16h40" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="10" cy="12" r="1.5" fill="currentColor"/>
+                  <circle cx="15" cy="12" r="1.5" fill="currentColor"/>
+                </svg>
+                <span>BAAM Materials</span>
+              </div>
+            </div>
+            <div class="portfolio-card__body">
+              <span class="portfolio-card__tag">Construction</span>
+              <h3 class="portfolio-card__title">BAAM Materials</h3>
+              <p class="portfolio-card__desc">Direct-to-site materials supplier. 3-page trade website with pricing table and contact form.</p>
+              <a href="#" class="portfolio-card__link" aria-label="View BAAM Materials website">View Site →</a>
+            </div>
+          </li>
+
+          <li class="portfolio-card" data-reveal data-delay="1">
+            <div class="portfolio-card__thumb">
+              <div class="portfolio-card__thumb-placeholder" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none" focusable="false">
+                  <rect x="4" y="8" width="40" height="32" rx="2" stroke="currentColor" stroke-width="2"/>
+                  <path d="M4 16h40" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="10" cy="12" r="1.5" fill="currentColor"/>
+                  <circle cx="15" cy="12" r="1.5" fill="currentColor"/>
+                </svg>
+                <span>Coming soon</span>
+              </div>
+            </div>
+            <div class="portfolio-card__body">
+              <span class="portfolio-card__tag">Trade</span>
+              <h3 class="portfolio-card__title">Project Coming Soon</h3>
+              <p class="portfolio-card__desc">More work to be added shortly. Get in touch to discuss your project.</p>
+              <a href="/contact.html" class="portfolio-card__link">Start Your Project →</a>
+            </div>
+          </li>
+
+          <li class="portfolio-card" data-reveal data-delay="2">
+            <div class="portfolio-card__thumb">
+              <div class="portfolio-card__thumb-placeholder" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none" focusable="false">
+                  <rect x="4" y="8" width="40" height="32" rx="2" stroke="currentColor" stroke-width="2"/>
+                  <path d="M4 16h40" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="10" cy="12" r="1.5" fill="currentColor"/>
+                  <circle cx="15" cy="12" r="1.5" fill="currentColor"/>
+                </svg>
+                <span>Coming soon</span>
+              </div>
+            </div>
+            <div class="portfolio-card__body">
+              <span class="portfolio-card__tag">Hospitality</span>
+              <h3 class="portfolio-card__title">Project Coming Soon</h3>
+              <p class="portfolio-card__desc">More work to be added shortly. Get in touch to discuss your project.</p>
+              <a href="/contact.html" class="portfolio-card__link">Start Your Project →</a>
+            </div>
+          </li>
+
+        </ul>
+
+        <div style="margin-block-start: var(--space-10); text-align: center;">
+          <a href="/work.html" class="button button--outline">See All Work</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section class="cta-band" aria-labelledby="cta-heading">
+      <div class="container">
+        <h2 id="cta-heading">Ready to Get Online Properly?</h2>
+        <p>Get in touch today. No jargon, no hard sell — just an honest conversation about what your business needs.</p>
+        <div class="cta-band__actions">
+          <a href="/contact.html" class="button button--large">Start the Conversation</a>
+        </div>
+        <div class="cta-band__phone">
+          <span class="cta-band__phone-label">Or call us directly</span>
+          <!-- Replace [PHONE NUMBER] with your actual number -->
+          <a href="tel:[PHONE NUMBER]" class="cta-band__phone-number">[PHONE NUMBER]</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== SITE FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div class="site-footer__brand">
+          <a href="/" class="footer-logo" aria-label="[BUSINESS NAME] — Home">
+            <img src="/images/logo.svg" alt="[BUSINESS NAME]" width="140" height="36">
+          </a>
+          <p class="site-footer__tagline">Hand-coded websites for UK businesses that mean business.</p>
+        </div>
+
+        <div>
+          <p class="site-footer__col-heading">Quick Links</p>
+          <nav aria-label="Footer quick links">
+            <ul class="site-footer__links" role="list">
+              <li><a href="/">Home</a></li>
+              <li><a href="/services.html">Services</a></li>
+              <li><a href="/work.html">Our Work</a></li>
+              <li><a href="/about.html">About</a></li>
+              <li><a href="/contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div>
+          <p class="site-footer__col-heading">Services</p>
+          <nav aria-label="Footer services links">
+            <ul class="site-footer__links" role="list">
+              <li><a href="/services.html#starter">Starter — £599</a></li>
+              <li><a href="/services.html#business">Business — £999</a></li>
+              <li><a href="/services.html#professional">Professional — £1,499</a></li>
+              <li><a href="/services.html#retainer">Monthly Retainer</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div>
+          <p class="site-footer__col-heading">Contact</p>
+          <address>
+            <ul class="site-footer__links" role="list">
+              <!-- Replace placeholders with real contact details -->
+              <li><a href="tel:[PHONE NUMBER]">[PHONE NUMBER]</a></li>
+              <li><a href="mailto:[EMAIL ADDRESS]">[EMAIL ADDRESS]</a></li>
+              <li>United Kingdom</li>
+            </ul>
+          </address>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p class="site-footer__copy">
+          &copy; <time datetime="2026">2026</time> [BUSINESS NAME]. All rights reserved.
+        </p>
+        <p class="site-footer__sign-off">Hand-coded with precision.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module">
+    import { initNav } from '/js/nav.js';
+    import { initScrollReveal } from '/js/reveal.js';
+    initNav();
+    initScrollReveal();
+  </script>
+
+</body>
+</html>
