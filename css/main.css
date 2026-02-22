@@ -22,29 +22,29 @@
   --color-brand-gold:    #e8a400;
   --color-brand-gold-dk: #d09400;
 
-  /* --- Semantic tokens (light-first) ------------------------------------ */
-  --color-bg:            #ffffff;
-  --color-surface:       #f7f7f8;
-  --color-surface-2:     #ededf0;
+  /* --- Semantic tokens (warm cream — light-first) ----------------------- */
+  --color-bg:            #faf8f4;  /* warm cream — easy on the eyes */
+  --color-surface:       #f0ece3;  /* slightly deeper warm surface */
+  --color-surface-2:     #e5dfd3;  /* warm mid-tone for contrast elements */
 
-  --color-text:          #1a1a1a;
-  --color-text-muted:    #5a5a6a;
-  --color-heading:       #0d0d14;
+  --color-text:          #1c1814;  /* warm near-black — softer than pure black */
+  --color-text-muted:    #6b6358;  /* warm grey-brown — readable on cream */
+  --color-heading:       #0f0c08;  /* rich warm dark for headings */
 
-  --color-accent:        #e8a400;
-  --color-accent-hover:  #d09400;
+  --color-accent:        #e8a400;  /* gold — unchanged */
+  --color-accent-hover:  #cc8f00;  /* slightly richer gold for hover */
   --color-accent-text:   #0a0a0a;  /* text on gold backgrounds */
 
-  --color-border:        rgba(0, 0, 0, 0.1);
-  --color-border-strong: rgba(0, 0, 0, 0.2);
+  --color-border:        rgba(28, 24, 20, 0.1);   /* warm-tinted border */
+  --color-border-strong: rgba(28, 24, 20, 0.2);   /* warm-tinted strong border */
   --color-white:         #ffffff;
 
-  --color-focus-ring:    #b07a00;
-  --color-link:          #0d0d14;
-  --color-link-hover:    #b07a00;
+  --color-focus-ring:    #cc8f00;  /* darker gold — better contrast on cream */
+  --color-link:          #1c1814;
+  --color-link-hover:    #cc8f00;
 
-  --color-error:         #c0392b;
-  --color-success:       #1a7a4a;
+  --color-error:         #b53422;
+  --color-success:       #2a7a4a;
 
   /* --- Spacing scale (8pt base) ----------------------------------------- */
   --space-1:   0.25rem;   /*  4px */
@@ -102,10 +102,10 @@
   --transition-base: 200ms ease;
   --transition-slow: 400ms ease;
 
-  /* --- Shadows (on light: soft, natural) --------------------------------- */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+  /* --- Shadows (warm-tinted for cream background) ------------------------ */
+  --shadow-sm: 0 1px 3px rgba(28, 24, 20, 0.08), 0 1px 2px rgba(28, 24, 20, 0.05);
+  --shadow-md: 0 4px 16px rgba(28, 24, 20, 0.1),  0 2px 4px rgba(28, 24, 20, 0.06);
+  --shadow-lg: 0 8px 32px rgba(28, 24, 20, 0.12), 0 4px 8px rgba(28, 24, 20, 0.06);
 
   /* --- Gold accent line for hero ----------------------------------------- */
   --accent-line: 3px solid var(--color-accent);
@@ -295,7 +295,7 @@
     position: sticky;
     inset-block-start: 0;
     z-index: 100;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(250, 248, 244, 0.95);
     border-block-end: 1px solid var(--color-border);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -1117,8 +1117,7 @@
   /* --- CTA band ----------------------------------------------------------- */
 
   .cta-band {
-    background-color: var(--color-bg);
-    border-block: 1px solid var(--color-border);
+    background-color: #0f0c08;  /* rich warm dark — strong contrast against cream */
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -1128,7 +1127,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at center, rgba(232, 164, 0, 0.04) 0%, transparent 70%);
+    background: radial-gradient(ellipse at center, rgba(232, 164, 0, 0.06) 0%, transparent 65%);
     pointer-events: none;
   }
 
@@ -1144,10 +1143,11 @@
   .cta-band h2 {
     margin-block-end: 0;
     max-inline-size: 22ch;
+    color: #ffffff;
   }
 
   .cta-band p {
-    color: var(--color-text-muted);
+    color: rgba(255, 255, 255, 0.65);
     max-inline-size: 52ch;
     margin-inline: auto;
   }
@@ -1180,7 +1180,7 @@
   .cta-band__phone-number {
     font-size: var(--text-h2);
     font-weight: 800;
-    color: var(--color-heading);
+    color: #ffffff;
     text-decoration: none;
     letter-spacing: var(--tracking-tight);
     transition: color var(--transition-base);
