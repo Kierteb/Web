@@ -1,7 +1,7 @@
 /* ==========================================================================
    PRECISION SITES — main.css
    Single-file CSS using @layer architecture
-   Dark-first design | BEM-lite naming | CSS custom properties throughout
+   Light-first design | BEM-lite naming | CSS custom properties throughout
    ========================================================================== */
 
 /* ==========================================================================
@@ -22,29 +22,29 @@
   --color-brand-gold:    #e8a400;
   --color-brand-gold-dk: #d09400;
 
-  /* --- Semantic tokens (dark-first) ------------------------------------- */
-  --color-bg:            #0a0a0a;
-  --color-surface:       #111111;
-  --color-surface-2:     #1a1a1a;
+  /* --- Semantic tokens (light-first) ------------------------------------ */
+  --color-bg:            #ffffff;
+  --color-surface:       #f7f7f8;
+  --color-surface-2:     #ededf0;
 
-  --color-text:          #e8e8e8;
-  --color-text-muted:    #9898a8;
-  --color-heading:       #ffffff;
+  --color-text:          #1a1a1a;
+  --color-text-muted:    #5a5a6a;
+  --color-heading:       #0d0d14;
 
   --color-accent:        #e8a400;
   --color-accent-hover:  #d09400;
   --color-accent-text:   #0a0a0a;  /* text on gold backgrounds */
 
-  --color-border:        rgba(255, 255, 255, 0.08);
-  --color-border-strong: rgba(255, 255, 255, 0.15);
+  --color-border:        rgba(0, 0, 0, 0.1);
+  --color-border-strong: rgba(0, 0, 0, 0.2);
   --color-white:         #ffffff;
 
-  --color-focus-ring:    #e8a400;
-  --color-link:          #e8e8e8;
-  --color-link-hover:    #e8a400;
+  --color-focus-ring:    #b07a00;
+  --color-link:          #0d0d14;
+  --color-link-hover:    #b07a00;
 
-  --color-error:         #e05252;
-  --color-success:       #52c896;
+  --color-error:         #c0392b;
+  --color-success:       #1a7a4a;
 
   /* --- Spacing scale (8pt base) ----------------------------------------- */
   --space-1:   0.25rem;   /*  4px */
@@ -102,10 +102,10 @@
   --transition-base: 200ms ease;
   --transition-slow: 400ms ease;
 
-  /* --- Shadows (on dark: lighter, subtle) --------------------------------- */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.6);
+  /* --- Shadows (on light: soft, natural) --------------------------------- */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
 
   /* --- Gold accent line for hero ----------------------------------------- */
   --accent-line: 3px solid var(--color-accent);
@@ -127,7 +127,7 @@
     -webkit-text-size-adjust: 100%;
     tab-size: 4;
     scroll-behavior: smooth;
-    color-scheme: dark;
+    color-scheme: light;
   }
 
   :where(body) {
@@ -295,7 +295,7 @@
     position: sticky;
     inset-block-start: 0;
     z-index: 100;
-    background-color: rgba(10, 10, 10, 0.95);
+    background-color: rgba(255, 255, 255, 0.95);
     border-block-end: 1px solid var(--color-border);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
