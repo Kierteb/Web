@@ -1,7 +1,8 @@
 /* ==========================================================================
    PRECISION SITES — main.css
    Single-file CSS using @layer architecture
-   Light-first design | BEM-lite naming | CSS custom properties throughout
+   Dark-first design | BEM-lite naming | CSS custom properties throughout
+   Palette: Deep Graphite · Indigo · Electric Azure · Soft Amber
    ========================================================================== */
 
 /* ==========================================================================
@@ -17,34 +18,43 @@
 
 :root {
   /* --- Brand palette ---------------------------------------------------- */
-  --color-brand-black:   #0a0a0a;
-  --color-brand-white:   #ffffff;
-  --color-brand-gold:    #e8a400;
-  --color-brand-gold-dk: #d09400;
+  --color-brand-primary:  #4F5BD5;  /* Indigo Slate — buttons, primary CTAs */
+  --color-brand-hover:    #424EC3;  /* Indigo darker — hover state */
+  --color-brand-azure:    #2DD4FF;  /* Electric Azure — links, micro-interactions */
+  --color-brand-azure-dk: #1BBDE8;  /* Azure darker — hover */
+  --color-brand-warm:     #F4B860;  /* Soft Amber — highlights, warmth */
+  --color-brand-warm-dk:  #E0A040;  /* Amber darker */
 
-  /* --- Semantic tokens (warm cream — light-first) ----------------------- */
-  --color-bg:            #faf8f4;  /* warm cream — easy on the eyes */
-  --color-surface:       #f0ece3;  /* slightly deeper warm surface */
-  --color-surface-2:     #e5dfd3;  /* warm mid-tone for contrast elements */
+  /* --- Semantic tokens (dark-first) ------------------------------------- */
+  --color-bg:            #0F1115;  /* Deep Graphite — premium, architectural */
+  --color-surface:       #171A21;  /* Surface 1 — card backgrounds */
+  --color-surface-2:     #1F2430;  /* Surface 2 — subtle contrast blocks */
 
-  --color-text:          #1c1814;  /* warm near-black — softer than pure black */
-  --color-text-muted:    #6b6358;  /* warm grey-brown — readable on cream */
-  --color-heading:       #0f0c08;  /* rich warm dark for headings */
+  --color-text:          #E6E8EE;  /* Primary text */
+  --color-text-muted:    #A3A8B8;  /* Secondary text */
+  --color-text-subtle:   #6F768A;  /* Muted text */
+  --color-heading:       #ffffff;  /* Headings — full white on dark */
 
-  --color-accent:        #e8a400;  /* gold — unchanged */
-  --color-accent-hover:  #cc8f00;  /* slightly richer gold for hover */
-  --color-accent-text:   #0a0a0a;  /* text on gold backgrounds */
+  /* Accent = Azure (links, hover states, micro-interactions per palette) */
+  --color-accent:        #2DD4FF;
+  --color-accent-hover:  #1BBDE8;
+  --color-accent-text:   #0F1115;  /* dark text on azure */
 
-  --color-border:        rgba(28, 24, 20, 0.1);   /* warm-tinted border */
-  --color-border-strong: rgba(28, 24, 20, 0.2);   /* warm-tinted strong border */
+  /* Warm = Amber (highlights, warmth — used minimally) */
+  --color-warm:          #F4B860;
+  --color-warm-text:     #0F1115;
+
+  --color-border:        #2A3140;  /* Hairline border */
+  --color-border-strong: #3A4558;  /* Stronger border */
   --color-white:         #ffffff;
 
-  --color-focus-ring:    #cc8f00;  /* darker gold — better contrast on cream */
-  --color-link:          #1c1814;
-  --color-link-hover:    #cc8f00;
+  --color-focus-ring:    #2DD4FF;  /* Azure focus ring */
+  --color-link:          #2DD4FF;  /* Azure links */
+  --color-link-hover:    #1BBDE8;
 
-  --color-error:         #b53422;
-  --color-success:       #2a7a4a;
+  --color-error:         #E45858;
+  --color-success:       #3ECF8E;
+  --color-warning:       #F2A93B;
 
   /* --- Spacing scale (8pt base) ----------------------------------------- */
   --space-1:   0.25rem;   /*  4px */
@@ -102,13 +112,13 @@
   --transition-base: 200ms ease;
   --transition-slow: 400ms ease;
 
-  /* --- Shadows (warm-tinted for cream background) ------------------------ */
-  --shadow-sm: 0 1px 3px rgba(28, 24, 20, 0.08), 0 1px 2px rgba(28, 24, 20, 0.05);
-  --shadow-md: 0 4px 16px rgba(28, 24, 20, 0.1),  0 2px 4px rgba(28, 24, 20, 0.06);
-  --shadow-lg: 0 8px 32px rgba(28, 24, 20, 0.12), 0 4px 8px rgba(28, 24, 20, 0.06);
+  /* --- Shadows (deep, suited to dark backgrounds) ------------------------ */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4),  0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.6), 0 4px 8px rgba(0, 0, 0, 0.4);
 
-  /* --- Gold accent line for hero ----------------------------------------- */
-  --accent-line: 3px solid var(--color-accent);
+  /* --- Indigo accent line ------------------------------------------------- */
+  --accent-line: 3px solid var(--color-brand-primary);
 }
 
 
@@ -127,7 +137,7 @@
     -webkit-text-size-adjust: 100%;
     tab-size: 4;
     scroll-behavior: smooth;
-    color-scheme: light;
+    color-scheme: dark;
   }
 
   :where(body) {
@@ -295,7 +305,7 @@
     position: sticky;
     inset-block-start: 0;
     z-index: 100;
-    background-color: rgba(250, 248, 244, 0.95);
+    background-color: rgba(15, 17, 21, 0.95);
     border-block-end: 1px solid var(--color-border);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -419,8 +429,8 @@
     gap: var(--space-2);
     padding-block: var(--space-3);
     padding-inline: var(--space-8);
-    background-color: var(--color-accent);
-    color: var(--color-accent-text);
+    background-color: var(--color-brand-primary);  /* Indigo */
+    color: var(--color-white);
     font-family: var(--font-sans);
     font-size: var(--text-small);
     font-weight: 700;
@@ -440,21 +450,21 @@
 
   .button:hover,
   .button:focus-visible {
-    background-color: var(--color-accent-hover);
-    color: var(--color-accent-text);
+    background-color: var(--color-brand-hover);
+    color: var(--color-white);
   }
 
   .button--outline {
     background-color: transparent;
     border-color: var(--color-border-strong);
-    color: var(--color-text);
+    color: var(--color-text-muted);
   }
 
   .button--outline:hover,
   .button--outline:focus-visible {
-    background-color: var(--color-surface);
-    border-color: var(--color-accent);
-    color: var(--color-heading);
+    background-color: var(--color-surface-2);
+    border-color: var(--color-brand-primary);
+    color: var(--color-white);
   }
 
   .button--ghost {
@@ -703,8 +713,8 @@
     inset-block-start: calc(-1 * var(--space-3));
     inset-inline-start: 50%;
     transform: translateX(-50%);
-    background-color: var(--color-accent);
-    color: var(--color-accent-text);
+    background-color: var(--color-warm);  /* Amber — adds warmth to the indigo palette */
+    color: var(--color-warm-text);
     font-size: var(--text-xs);
     font-weight: 700;
     letter-spacing: var(--tracking-widest);
@@ -901,11 +911,11 @@
     letter-spacing: var(--tracking-wide);
     text-transform: uppercase;
     color: var(--color-accent);
-    background-color: rgba(232, 164, 0, 0.1);
+    background-color: rgba(45, 212, 255, 0.08);
     padding-block: var(--space-1);
     padding-inline: var(--space-3);
     border-radius: var(--radius-pill);
-    border: 1px solid rgba(232, 164, 0, 0.2);
+    border: 1px solid rgba(45, 212, 255, 0.18);
   }
 
   .portfolio-card__title {
@@ -1117,7 +1127,7 @@
   /* --- CTA band ----------------------------------------------------------- */
 
   .cta-band {
-    background-color: #0f0c08;  /* rich warm dark — strong contrast against cream */
+    background-color: var(--color-brand-primary);  /* Indigo — high-energy CTA */
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -1127,7 +1137,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at center, rgba(232, 164, 0, 0.06) 0%, transparent 65%);
+    background: radial-gradient(ellipse at center, rgba(45, 212, 255, 0.12) 0%, transparent 65%);
     pointer-events: none;
   }
 
@@ -1147,7 +1157,7 @@
   }
 
   .cta-band p {
-    color: rgba(255, 255, 255, 0.65);
+    color: rgba(255, 255, 255, 0.75);
     max-inline-size: 52ch;
     margin-inline: auto;
   }
@@ -1240,8 +1250,8 @@
 
   :is(.field input, .field textarea, .field select):focus {
     outline: none;
-    border-color: var(--color-accent);
-    box-shadow: 0 0 0 3px rgba(232, 164, 0, 0.15);
+    border-color: var(--color-brand-primary);
+    box-shadow: 0 0 0 3px rgba(79, 91, 213, 0.25);
   }
 
   :is(.field input, .field textarea, .field select)[aria-invalid="true"] {
@@ -1249,7 +1259,7 @@
   }
 
   .field select {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239898a8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23A3A8B8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right var(--space-4) center;
     padding-inline-end: var(--space-10);
