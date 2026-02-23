@@ -391,6 +391,13 @@
 
   .nav__cta {
     flex-shrink: 0;
+    display: none;
+  }
+
+  @media (width >= 64rem) {
+    .nav__cta {
+      display: inline-flex;
+    }
   }
 
   .nav__toggle {

@@ -56,6 +56,25 @@ export function initNav() {
     });
   });
 
+  // Close when clicking outside the nav
+  document.addEventListener('click', function (e) {
+    if (
+      toggle.getAttribute('aria-expanded') === 'true' &&
+      !navList.contains(e.target) &&
+      !toggle.contains(e.target)
+    ) {
+      closeNav();
+    }
+  });
+
+  // Reset nav state when resizing to desktop breakpoint
+  const desktopMql = window.matchMedia('(min-width: 64rem)');
+  desktopMql.addEventListener('change', function (e) {
+    if (e.matches) {
+      closeNav();
+    }
+  });
+
   // Scroll spy — updates aria-current when nav links point to
   // sections on the current page via hash anchors
   initScrollSpy(navList);
