@@ -354,8 +354,6 @@
     color: var(--color-white);
     letter-spacing: var(--tracking-tight);
     white-space: nowrap;
-    border-bottom: 2px solid var(--color-accent);
-    padding-bottom: 2px;
   }
 
   .nav__list {
@@ -584,7 +582,11 @@
 
   /* Hero geometric accent */
   .hero__accent-bar {
-    display: none;
+    display: block;
+    inline-size: 4rem;
+    block-size: 3px;
+    background-color: var(--color-accent);
+    margin-block-end: var(--space-8);
   }
 
   /* Hero two-column layout */
