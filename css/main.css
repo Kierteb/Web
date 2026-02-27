@@ -855,6 +855,10 @@
     margin-block-start: 0.1em;
   }
 
+  .pricing-card .button {
+    margin-block-start: auto;
+  }
+
   .pricing-card__divider {
     block-size: 1px;
     background-color: var(--color-border);
@@ -1718,6 +1722,7 @@
     color: var(--color-text-muted);
     margin-block-start: var(--space-8);
     text-align: center;
+    max-inline-size: none;
   }
 
   .pricing-note a {
