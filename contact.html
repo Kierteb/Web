@@ -110,7 +110,7 @@
       <div class="container">
         <span class="hero__kicker">Let's talk</span>
         <h1 id="contact-hero-heading">Get in Touch</h1>
-        <p class="hero__subtext">No jargon. No hard sell. Tell us about your business and what you need — we'll come back to you with an honest quote within 24 hours.</p>
+        <p class="hero__subtext">No jargon. No hard sell. Tell us about your business and what you need — we'll come back with an honest, fixed quote within 24 hours.</p>
       </div>
     </section>
 
@@ -213,12 +213,33 @@
                 </div>
 
                 <div class="field">
+                  <label for="trade">
+                    Trade / Industry
+                    <span class="field__required" aria-hidden="true">*</span>
+                  </label>
+                  <select id="trade" name="trade" autocomplete="off" required aria-required="true" aria-describedby="trade-error">
+                    <option value="">Please select</option>
+                    <option value="plumber">Plumber</option>
+                    <option value="electrician">Electrician</option>
+                    <option value="gas-engineer">Gas Engineer</option>
+                    <option value="builder">Builder</option>
+                    <option value="roofer">Roofer</option>
+                    <option value="landscaper">Landscaper</option>
+                    <option value="hvac">HVAC Engineer</option>
+                    <option value="other-trades">Other trades business</option>
+                    <option value="non-trades">Non-trades business</option>
+                  </select>
+                  <span class="field__error" id="trade-error" role="alert" aria-live="polite"></span>
+                </div>
+
+                <div class="field">
                   <label for="package">Which package interests you?</label>
                   <select id="package" name="package" autocomplete="off">
                     <option value="">Not sure yet</option>
-                    <option value="starter">Starter — £599</option>
-                    <option value="business">Business — £999</option>
-                    <option value="professional">Professional — £1,499</option>
+                    <option value="essential">Essential — £399</option>
+                    <option value="starter">Starter — £749</option>
+                    <option value="growth">Growth — £1,149</option>
+                    <option value="pro">Pro — £1,499</option>
                     <option value="retainer">Monthly Retainer</option>
                     <option value="other">Something else</option>
                   </select>
@@ -254,25 +275,71 @@
 
           <!-- Direct contact info alongside the form -->
           <aside aria-labelledby="direct-contact-heading">
-            <h2 id="direct-contact-heading">Or Reach Us Directly</h2>
-            <div class="contact-info">
-              <!-- Replace 020 3488 7077 with your real phone number -->
-              <div class="contact-info__item">
-                <span class="contact-info__label">Phone</span>
-                <a href="tel:020 3488 7077" class="contact-info__value">020 3488 7077</a>
-              </div>
-              <!-- Replace hello@deepwaterdesign.co.uk with your real email address -->
-              <div class="contact-info__item">
-                <span class="contact-info__label">Email</span>
-                <a href="mailto:hello@deepwaterdesign.co.uk" class="contact-info__value">hello@deepwaterdesign.co.uk</a>
-              </div>
-              <div class="contact-info__item">
-                <span class="contact-info__label">Based in</span>
-                <span class="contact-info__value" style="cursor:default">United Kingdom</span>
+            <h2 id="direct-contact-heading" class="sr-only">Contact information and next steps</h2>
+
+            <div data-reveal>
+              <p class="contact-info__note">We respond to all enquiries within 24 hours. Prefer to talk? Call us directly.</p>
+              <div class="contact-info">
+                <div class="contact-info__item">
+                  <span class="contact-info__label">Phone</span>
+                  <a href="tel:020 3488 7077" class="contact-info__value">020 3488 7077</a>
+                </div>
+                <div class="contact-info__item">
+                  <span class="contact-info__label">Email</span>
+                  <a href="mailto:hello@deepwaterdesign.co.uk" class="contact-info__value">hello@deepwaterdesign.co.uk</a>
+                </div>
+                <div class="contact-info__item">
+                  <span class="contact-info__label">Based in</span>
+                  <span class="contact-info__value" style="cursor:default">United Kingdom</span>
+                </div>
               </div>
             </div>
-            <p class="contact-info__note">We aim to respond to all enquiries within 24 hours. If your project is urgent, please call directly.</p>
+
+            <div data-reveal>
+              <h3>What happens next</h3>
+              <ol style="padding-inline-start: var(--space-6); color: var(--color-text-muted); line-height: var(--leading-relaxed);">
+                <li style="margin-block-end: var(--space-3)">We review your enquiry and contact you within 24 hours</li>
+                <li style="margin-block-end: var(--space-3)">Quick call (15 minutes) to understand your requirements</li>
+                <li>Fixed quote sent by email — no obligation</li>
+              </ol>
+            </div>
+
+            <div data-reveal>
+              <p class="contact-info__note">Every package comes with our 14-day delivery guarantee — from the day we receive your logo, copy and photos.</p>
+            </div>
           </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="bg-surface" aria-labelledby="contact-faq-heading">
+      <div class="container container--prose">
+        <div class="section-header">
+          <span class="section-header__kicker">FAQs</span>
+          <h2 id="contact-faq-heading">Common questions</h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>How quickly will you respond?</summary>
+            <p class="faq-item__body">We respond to every enquiry within 24 hours — usually much faster. If you'd rather speak to someone straight away, call us on <a href="tel:020 3488 7077">020 3488 7077</a>.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is the quote really free and no obligation?</summary>
+            <p class="faq-item__body">Yes. We'll review your enquiry, have a quick 15-minute call, and send you a fixed quote by email. You're under no obligation whatsoever to proceed. We don't do high-pressure sales calls.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What information do you need from me?</summary>
+            <p class="faq-item__body">To get started, we need your logo, the copy (text) for each page, and any photos you'd like to use. We'll guide you through exactly what we need after the initial call. If you don't have professional photos, we can advise on affordable options.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do you work with businesses outside of trades?</summary>
+            <p class="faq-item__body">Our main focus is UK trades businesses — plumbers, electricians, builders, roofers, landscapers, gas engineers, and HVAC engineers. If you run a different kind of business, get in touch anyway and we'll let you know whether we're a good fit.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What does the 14-day delivery guarantee mean?</summary>
+            <p class="faq-item__body">Once we have everything we need from you — your logo, page content, and photos — we guarantee to deliver your completed website within 14 calendar days. The Pro package includes a priority 10-day turnaround.</p>
+          </details>
         </div>
       </div>
     </section>
@@ -308,9 +375,10 @@
           <p class="site-footer__col-heading">Services</p>
           <nav aria-label="Footer services links">
             <ul class="site-footer__links" role="list">
-              <li><a href="/services.html#starter">Starter — £599</a></li>
-              <li><a href="/services.html#business">Business — £999</a></li>
-              <li><a href="/services.html#professional">Professional — £1,499</a></li>
+              <li><a href="/services.html#essential">Essential — £399</a></li>
+              <li><a href="/services.html#starter">Starter — £749</a></li>
+              <li><a href="/services.html#growth">Growth — £1,149</a></li>
+              <li><a href="/services.html#pro">Pro — £1,499</a></li>
               <li><a href="/services.html#retainer">Monthly Retainer</a></li>
             </ul>
           </nav>

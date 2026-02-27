@@ -1,8 +1,8 @@
 /* ==========================================================================
-   PRECISION SITES — main.css
+   DEEPWATER DESIGN — main.css
    Single-file CSS using @layer architecture
-   Dark-first design | BEM-lite naming | CSS custom properties throughout
-   Palette: Deep Graphite · Indigo · Electric Azure · Soft Amber
+   Light-first design | BEM-lite naming | CSS custom properties throughout
+   Palette: Deep Navy · Construction Orange · White
    ========================================================================== */
 
 /* ==========================================================================
@@ -18,43 +18,49 @@
 
 :root {
   /* --- Brand palette ---------------------------------------------------- */
-  --color-brand-primary:  #4F5BD5;  /* Indigo Slate — buttons, primary CTAs */
-  --color-brand-hover:    #424EC3;  /* Indigo darker — hover state */
-  --color-brand-azure:    #2DD4FF;  /* Electric Azure — links, micro-interactions */
-  --color-brand-azure-dk: #1BBDE8;  /* Azure darker — hover */
-  --color-brand-warm:     #F4B860;  /* Soft Amber — highlights, warmth */
-  --color-brand-warm-dk:  #E0A040;  /* Amber darker */
+  --color-brand-primary:    #0a1628;   /* Deep navy */
+  --color-brand-accent:     #f97316;   /* Construction orange */
+  --color-brand-secondary:  #1e3a5f;   /* Mid navy */
 
-  /* --- Semantic tokens (dark-first) ------------------------------------- */
-  --color-bg:            #0F1115;  /* Deep Graphite — premium, architectural */
-  --color-surface:       #171A21;  /* Surface 1 — card backgrounds */
-  --color-surface-2:     #1F2430;  /* Surface 2 — subtle contrast blocks */
+  /* --- Semantic backgrounds -------------------------------------------- */
+  --color-bg:               #ffffff;
+  --color-bg-subtle:        #f8fafc;
+  --color-bg-muted:         #f1f5f9;
+  --color-bg-dark:          #0a1628;
 
-  --color-text:          #E6E8EE;  /* Primary text */
-  --color-text-muted:    #A3A8B8;  /* Secondary text */
-  --color-text-subtle:   #6F768A;  /* Muted text */
-  --color-heading:       #ffffff;  /* Headings — full white on dark */
+  /* --- Text ------------------------------------------------------------ */
+  --color-text:             #0f172a;
+  --color-text-muted:       #475569;
+  --color-text-subtle:      #94a3b8;
+  --color-text-on-dark:     #e2e8f0;
+  --color-heading:          #0a1628;
 
-  /* Accent = Azure (links, hover states, micro-interactions per palette) */
-  --color-accent:        #2DD4FF;
-  --color-accent-hover:  #1BBDE8;
-  --color-accent-text:   #0F1115;  /* dark text on azure */
+  /* --- Borders --------------------------------------------------------- */
+  --color-border:           rgba(10, 22, 40, 0.1);
+  --color-border-strong:    rgba(10, 22, 40, 0.2);
+  --color-white:            #ffffff;
 
-  /* Warm = Amber (highlights, warmth — used minimally) */
-  --color-warm:          #F4B860;
-  --color-warm-text:     #0F1115;
+  /* --- Interactive ----------------------------------------------------- */
+  --color-accent:           #f97316;
+  --color-accent-hover:     #ea6c05;
+  --color-link:             #0a1628;
+  --color-link-hover:       #f97316;
+  --color-focus-ring:       #f97316;
 
-  --color-border:        #2A3140;  /* Hairline border */
-  --color-border-strong: #3A4558;  /* Stronger border */
-  --color-white:         #ffffff;
+  /* --- Feedback -------------------------------------------------------- */
+  --color-success:          #15803d;
+  --color-error:            #b91c1c;
 
-  --color-focus-ring:    #2DD4FF;  /* Azure focus ring */
-  --color-link:          #2DD4FF;  /* Azure links */
-  --color-link-hover:    #1BBDE8;
+  /* --- Legacy aliases — maintain backwards compat with component CSS --- */
+  --color-surface:          var(--color-bg-subtle);
+  --color-surface-2:        var(--color-bg-muted);
+  --color-brand-hover:      var(--color-accent-hover);
+  --color-warm:             var(--color-accent);
+  --color-warm-text:        #0f172a;
+  --color-accent-text:      #0f172a;
 
-  --color-error:         #E45858;
-  --color-success:       #3ECF8E;
-  --color-warning:       #F2A93B;
+  /* --- Accent line ---------------------------------------------------- */
+  --accent-line:            3px solid var(--color-accent);
 
   /* --- Spacing scale (8pt base) ----------------------------------------- */
   --space-1:   0.25rem;   /*  4px */
@@ -117,8 +123,6 @@
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.3);
   --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.6), 0 4px 8px rgba(0, 0, 0, 0.4);
 
-  /* --- Indigo accent line ------------------------------------------------- */
-  --accent-line: 3px solid var(--color-brand-primary);
 }
 
 
@@ -137,7 +141,7 @@
     -webkit-text-size-adjust: 100%;
     tab-size: 4;
     scroll-behavior: smooth;
-    color-scheme: dark;
+    color-scheme: light;
   }
 
   :where(body) {
@@ -305,8 +309,8 @@
     position: sticky;
     inset-block-start: 0;
     z-index: 100;
-    background-color: rgba(15, 17, 21, 0.95);
-    border-block-end: 1px solid var(--color-border);
+    background-color: rgba(10, 22, 40, 0.97);
+    border-block-end: 1px solid rgba(10, 22, 40, 0.3);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     contain: layout;
@@ -362,8 +366,8 @@
     inset-block-start: calc(100% + var(--space-4));
     inset-inline: 0;
     padding: var(--space-6);
-    background-color: var(--color-surface);
-    border: 1px solid var(--color-border);
+    background-color: var(--color-bg-dark);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--radius-lg);
     z-index: 99;
     gap: var(--space-4);
@@ -373,7 +377,7 @@
     font-size: var(--text-small);
     font-weight: 500;
     text-decoration: none;
-    color: var(--color-text-muted);
+    color: rgba(226, 232, 240, 0.75);
     letter-spacing: var(--tracking-wide);
     text-transform: uppercase;
     transition: color var(--transition-base);
@@ -382,7 +386,7 @@
 
   .nav__list a:hover,
   .nav__list [aria-current="page"] {
-    color: var(--color-heading);
+    color: var(--color-text-on-dark);
   }
 
   .nav__list [aria-current="page"] {
@@ -398,9 +402,9 @@
     align-items: center;
     justify-content: center;
     background: none;
-    border: 1px solid var(--color-border);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     cursor: pointer;
-    color: var(--color-text);
+    color: var(--color-text-on-dark);
     padding: var(--space-2);
     border-radius: var(--radius-sm);
     transition: border-color var(--transition-base), color var(--transition-base);
@@ -437,7 +441,7 @@
     gap: var(--space-2);
     padding-block: var(--space-3);
     padding-inline: var(--space-8);
-    background-color: var(--color-brand-primary);  /* Indigo */
+    background-color: var(--color-accent);  /* Construction orange */
     color: var(--color-white);
     font-family: var(--font-sans);
     font-size: var(--text-small);
@@ -458,20 +462,20 @@
 
   .button:hover,
   .button:focus-visible {
-    background-color: var(--color-brand-hover);
+    background-color: var(--color-accent-hover);
     color: var(--color-white);
   }
 
   .button--outline {
     background-color: transparent;
-    border-color: var(--color-border-strong);
-    color: var(--color-text-muted);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: var(--color-white);
   }
 
   .button--outline:hover,
   .button--outline:focus-visible {
-    background-color: var(--color-surface-2);
-    border-color: var(--color-brand-primary);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--color-white);
     color: var(--color-white);
   }
 
@@ -511,9 +515,15 @@
     padding-block: clamp(var(--space-20), 12vw, var(--space-32));
     position: relative;
     overflow: hidden;
-    background-image: radial-gradient(circle, rgba(79, 91, 213, 0.14) 1px, transparent 1px);
+    background-color: var(--color-bg-dark);
+    background-image: radial-gradient(circle, rgba(249, 115, 22, 0.08) 1px, transparent 1px);
     background-size: 28px 28px;
   }
+
+  /* Light text on dark hero */
+  .hero h1 { color: #ffffff; }
+  .hero .hero__subtext { color: rgba(226, 232, 240, 0.85); }
+  .hero .hero__kicker { color: var(--color-accent); }
 
   .hero::before {
     content: '';
@@ -521,17 +531,17 @@
     inset-block-start: 0;
     inset-inline-start: 0;
     inline-size: var(--space-16);
-    block-size: var(--accent-line, 3px);
+    block-size: 3px;
     background-color: var(--color-accent);
   }
 
   .hero--dark {
-    background-color: var(--color-bg);
+    /* inherits dark background from .hero */
   }
 
   .hero--page {
     padding-block: clamp(var(--space-16), 8vw, var(--space-24));
-    border-block-end: 1px solid var(--color-border);
+    border-block-end: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .hero__kicker {
@@ -975,11 +985,11 @@
     letter-spacing: var(--tracking-wide);
     text-transform: uppercase;
     color: var(--color-accent);
-    background-color: rgba(45, 212, 255, 0.08);
+    background-color: rgba(249, 115, 22, 0.08);
     padding-block: var(--space-1);
     padding-inline: var(--space-3);
     border-radius: var(--radius-pill);
-    border: 1px solid rgba(45, 212, 255, 0.18);
+    border: 1px solid rgba(249, 115, 22, 0.2);
   }
 
   .portfolio-card__title {
@@ -1201,7 +1211,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at center, rgba(45, 212, 255, 0.12) 0%, transparent 65%);
+    background: radial-gradient(ellipse at center, rgba(249, 115, 22, 0.15) 0%, transparent 65%);
     pointer-events: none;
   }
 
@@ -1314,8 +1324,8 @@
 
   :is(.field input, .field textarea, .field select):focus {
     outline: none;
-    border-color: var(--color-brand-primary);
-    box-shadow: 0 0 0 3px rgba(79, 91, 213, 0.25);
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
   }
 
   :is(.field input, .field textarea, .field select)[aria-invalid="true"] {
