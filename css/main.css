@@ -1266,7 +1266,7 @@
     font-weight: 700;
     letter-spacing: var(--tracking-widest);
     text-transform: uppercase;
-    color: var(--color-text-muted);
+    color: rgba(255, 255, 255, 0.65);
     max-inline-size: none;
   }
 
