@@ -582,11 +582,7 @@
 
   /* Hero geometric accent */
   .hero__accent-bar {
-    display: block;
-    inline-size: 4rem;
-    block-size: 3px;
-    background-color: var(--color-accent);
-    margin-block-end: var(--space-8);
+    display: none;
   }
 
   /* Hero two-column layout */
