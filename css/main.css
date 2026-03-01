@@ -1360,7 +1360,7 @@
     gap: var(--space-4);
   }
 
-  @media (width < 36rem) {
+  @media (width < 48rem) {
     .form-row {
       grid-template-columns: 1fr;
     }
