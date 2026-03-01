@@ -548,10 +548,6 @@
     border-block-end: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  .hero--page .hero__kicker {
-    color: rgba(255, 255, 255, 0.65);
-  }
-
   .hero__kicker {
     display: inline-block;
     font-size: var(--text-xs);
