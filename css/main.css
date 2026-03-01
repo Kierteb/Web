@@ -522,7 +522,7 @@
     position: relative;
     overflow: hidden;
     background-color: var(--color-bg-dark);
-    background-image: radial-gradient(circle, rgba(59, 130, 246, 0.45) 1px, transparent 1px);
+    background-image: radial-gradient(circle, rgba(59, 130, 246, 0.22) 1px, transparent 1px);
     background-size: 28px 28px;
   }
 
