@@ -530,13 +530,7 @@
   .hero .hero__kicker { color: var(--color-accent); }
 
   .hero::before {
-    content: '';
-    position: absolute;
-    inset-block-start: 0;
-    inset-inline-start: 0;
-    inline-size: var(--space-16);
-    block-size: 3px;
-    background-color: var(--color-accent);
+    display: none;
   }
 
   .hero--dark {
