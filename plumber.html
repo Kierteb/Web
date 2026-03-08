@@ -33,6 +33,199 @@
   <!-- Styles -->
   <link rel="stylesheet" href="/css/main.css">
 
+  <style>
+    /* --- Pullquote --- */
+    .lp-pullquote {
+      text-align: center;
+      max-inline-size: 44rem;
+      margin-inline: auto;
+      padding: 2.5rem;
+      background: #0a1628;
+      border-radius: 0.5rem;
+      border-inline-start: 4px solid #f97316;
+    }
+    .lp-pullquote__text {
+      font-size: clamp(1.25rem, 2vw + 0.4rem, 1.75rem);
+      font-style: italic;
+      line-height: 1.35;
+      color: #e2e8f0;
+      margin-block-end: 1rem;
+    }
+    .lp-pullquote__cite {
+      font-size: 0.875rem;
+      color: #94a3b8;
+      font-style: normal;
+    }
+
+    /* --- Feature blocks (What's included) --- */
+    .lp-includes__blocks {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+      gap: 1.5rem;
+    }
+    .lp-includes__block {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 2rem;
+      text-align: center;
+      align-items: center;
+      background: #ffffff;
+      border: 1px solid rgba(10, 22, 40, 0.1);
+      border-radius: 0.5rem;
+    }
+    .lp-includes__block:hover {
+      border-color: rgba(10, 22, 40, 0.2);
+    }
+    .lp-includes__block svg {
+      width: 3rem;
+      height: 3rem;
+      color: #f97316;
+    }
+    .lp-includes__block h3 {
+      font-size: clamp(1.1rem, 1.5vw + 0.3rem, 1.375rem);
+      color: #0a1628;
+    }
+    .lp-includes__block p {
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    /* --- How it works (3 steps) --- */
+    .lp-steps {
+      background: #0a1628;
+    }
+    .lp-steps .section-heading {
+      color: #fff;
+    }
+    .lp-steps__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      text-align: center;
+      max-inline-size: 56rem;
+      margin-inline: auto;
+    }
+    @media (max-width: 47.999rem) {
+      .lp-steps__grid {
+        grid-template-columns: 1fr;
+        max-inline-size: 28rem;
+      }
+    }
+    .lp-steps__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 0.5rem;
+    }
+    .lp-steps__number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      background: #f97316;
+      color: #fff;
+      font-size: clamp(1.25rem, 2vw + 0.4rem, 1.75rem);
+      font-weight: 800;
+      line-height: 1;
+    }
+    .lp-steps__item h3 {
+      font-size: clamp(1.1rem, 1.5vw + 0.3rem, 1.375rem);
+      color: #fff;
+    }
+    .lp-steps__item p {
+      color: rgba(226, 232, 240, 0.75);
+      line-height: 1.6;
+    }
+
+    /* --- Comparison table --- */
+    .lp-compare__table {
+      width: 100%;
+      max-inline-size: 48rem;
+      margin-inline: auto;
+      border-collapse: collapse;
+      font-size: clamp(1rem, 0.5vw + 0.875rem, 1.125rem);
+      background: #f8fafc;
+      border: 1px solid rgba(10, 22, 40, 0.1);
+      border-radius: 0.5rem;
+      overflow: hidden;
+    }
+    .lp-compare__table th,
+    .lp-compare__table td {
+      padding: 1rem 1.5rem;
+      text-align: left;
+    }
+    .lp-compare__table thead th {
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid rgba(10, 22, 40, 0.1);
+      background: #f1f5f9;
+    }
+    .lp-compare__table thead th:first-child {
+      color: #475569;
+    }
+    .lp-compare__table thead th:nth-child(2) {
+      color: #475569;
+    }
+    .lp-compare__table thead th:nth-child(3) {
+      color: #0a1628;
+    }
+    .lp-compare__table tbody td {
+      border-bottom: 1px solid rgba(10, 22, 40, 0.1);
+    }
+    .lp-compare__table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .lp-compare__table tbody td:first-child {
+      font-weight: 600;
+      color: #0a1628;
+    }
+    .lp-compare__table tbody td:nth-child(2) {
+      color: #475569;
+    }
+    .lp-compare__table tbody td:nth-child(3) {
+      font-weight: 600;
+      color: #0a1628;
+    }
+    .lp-compare__col-us {
+      background-color: rgba(249, 115, 22, 0.05);
+    }
+    @media (max-width: 47.999rem) {
+      .lp-compare__table {
+        font-size: 0.875rem;
+      }
+      .lp-compare__table th,
+      .lp-compare__table td {
+        padding: 0.75rem;
+      }
+    }
+
+    /* --- Featured pricing card --- */
+    .pricing-card--featured {
+      border-width: 2px;
+      transform: scale(1.03);
+      z-index: 1;
+      position: relative;
+    }
+
+    /* --- Scarcity note --- */
+    .lp-scarcity {
+      font-size: 0.875rem;
+      color: #475569;
+      text-align: center;
+      margin-block-start: 1.5rem;
+      font-style: italic;
+    }
+  </style>
+
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CWGY73NC0C"></script>
   <script>
@@ -221,57 +414,124 @@
       </div>
     </section>
 
+    <!-- ===== PULLQUOTE STAT ===== -->
+    <section aria-label=”Industry statistic”>
+      <div class=”container”>
+        <blockquote class=”lp-pullquote” data-reveal>
+          <p class=”lp-pullquote__text”>”98% of consumers used the internet to find information about local businesses in 2024.”</p>
+          <footer>
+            <cite class=”lp-pullquote__cite”>— BrightLocal Local Consumer Review Survey 2024</cite>
+          </footer>
+        </blockquote>
+      </div>
+    </section>
+
     <!-- ===== SECTION 5: WHAT'S INCLUDED ===== -->
-    <section class="lp-includes" aria-labelledby="includes-heading">
-      <div class="container">
-        <h2 id="includes-heading" data-reveal>What your plumber website includes</h2>
-        <div class="lp-includes__grid">
-          <ul class="lp-includes__checklist" role="list" data-reveal>
-            <li>
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Homepage with emergency call button above the fold
-            </li>
-            <li>
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Services page covering all your work clearly
-            </li>
-            <li>
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              About page that builds trust before they call
-            </li>
-            <li>
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Working contact form — enquiries straight to your inbox
-            </li>
-            <li>
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Mobile-first design — fast and clear on any phone
-            </li>
-            <li>
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Tap-to-call button on every page
-            </li>
-            <li>
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Google Maps showing your service area
-            </li>
-            <li>
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Local SEO — structured for “plumber near me” searches
-            </li>
-            <li>
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Google Search Console setup (Growth &amp; Pro)
-            </li>
-            <li>
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              You own the code — no monthly platform fees
-            </li>
-          </ul>
-          <blockquote class="lp-includes__pullquote" data-reveal>
-            <p>8 in 10 homeowners search online before hiring a plumber. Is your business what they find?</p>
-          </blockquote>
+    <section class=”lp-includes” aria-labelledby=”includes-heading”>
+      <div class=”container”>
+        <h2 id=”includes-heading” class=”section-heading” data-reveal>What your plumber website includes</h2>
+        <div class=”lp-includes__blocks”>
+          <div class=”lp-includes__block” data-reveal>
+            <svg aria-hidden=”true” focusable=”false” viewBox=”0 0 40 40” fill=”none”>
+              <circle cx=”20” cy=”20” r=”14” stroke=”currentColor” stroke-width=”2.5”/>
+              <path d=”M15 20l4 4 7-8” stroke=”currentColor” stroke-width=”2.5” stroke-linecap=”round” stroke-linejoin=”round”/>
+            </svg>
+            <h3>Designed to Convert</h3>
+            <p>Homepage with an emergency call-to-action above the fold, tap-to-call on every page, and a working contact form that sends enquiries straight to your inbox.</p>
+          </div>
+          <div class=”lp-includes__block” data-reveal>
+            <svg aria-hidden=”true” focusable=”false” viewBox=”0 0 40 40” fill=”none”>
+              <rect x=”10” y=”6” width=”20” height=”28” rx=”3” stroke=”currentColor” stroke-width=”2.5”/>
+              <path d=”M17 30h6” stroke=”currentColor” stroke-width=”2.5” stroke-linecap=”round”/>
+            </svg>
+            <h3>Built for Mobile</h3>
+            <p>Mobile-first design that loads fast and looks right on any phone. Over 70% of plumbing searches happen on mobile — your site needs to work there first.</p>
+          </div>
+          <div class=”lp-includes__block” data-reveal>
+            <svg aria-hidden=”true” focusable=”false” viewBox=”0 0 40 40” fill=”none”>
+              <circle cx=”18” cy=”18” r=”12” stroke=”currentColor” stroke-width=”2.5”/>
+              <path d=”M27 27l7 7” stroke=”currentColor” stroke-width=”2.5” stroke-linecap=”round”/>
+            </svg>
+            <h3>Found on Google</h3>
+            <p>Local SEO baked in from day one, Google Search Console setup on Growth and Pro packages, and a site structure built for “plumber near me” searches.</p>
+          </div>
+          <div class=”lp-includes__block” data-reveal>
+            <svg aria-hidden=”true” focusable=”false” viewBox=”0 0 40 40” fill=”none”>
+              <rect x=”6” y=”14” width=”28” height=”16” rx=”2” stroke=”currentColor” stroke-width=”2.5”/>
+              <path d=”M12 14V10a8 8 0 0 1 16 0v4” stroke=”currentColor” stroke-width=”2.5” stroke-linecap=”round”/>
+              <circle cx=”20” cy=”22” r=”2” fill=”currentColor”/>
+            </svg>
+            <h3>Owned by You</h3>
+            <p>You own the code outright. No monthly platform fees, no lock-in, no renting. If you ever want to move or make changes yourself, you can.</p>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 5b: HOW IT WORKS ===== -->
+    <section class=”lp-steps” aria-labelledby=”steps-heading”>
+      <div class=”container”>
+        <h2 id=”steps-heading” class=”section-heading” data-reveal>How it works</h2>
+        <div class=”lp-steps__grid”>
+          <div class=”lp-steps__item” data-reveal>
+            <span class=”lp-steps__number” aria-hidden=”true”>1</span>
+            <h3>Get your free quote</h3>
+            <p>Tell us about your business and we'll recommend the right package. No obligation.</p>
+          </div>
+          <div class=”lp-steps__item” data-reveal>
+            <span class=”lp-steps__number” aria-hidden=”true”>2</span>
+            <h3>We build your site</h3>
+            <p>Hand-coded from scratch. You'll see a preview before anything goes live.</p>
+          </div>
+          <div class=”lp-steps__item” data-reveal>
+            <span class=”lp-steps__number” aria-hidden=”true”>3</span>
+            <h3>Go live in 14 days</h3>
+            <p>Your site is live, ranking, and generating enquiries.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 5c: COMPARISON TABLE ===== -->
+    <section class=”lp-compare” aria-labelledby=”compare-heading”>
+      <div class=”container”>
+        <h2 id=”compare-heading” class=”section-heading” data-reveal>Template sites vs hand-coded</h2>
+        <table class=”lp-compare__table” data-reveal>
+          <thead>
+            <tr>
+              <th scope=”col”><span class=”visually-hidden”>Feature</span></th>
+              <th scope=”col”>Template Sites<span class=”visually-hidden”> (Wix, Squarespace)</span></th>
+              <th scope=”col” class=”lp-compare__col-us”>Deepwater Design</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Monthly cost</td>
+              <td>&pound;20&ndash;40/month forever</td>
+              <td class=”lp-compare__col-us”>One-off from &pound;399</td>
+            </tr>
+            <tr>
+              <td>Load speed</td>
+              <td>3&ndash;6 seconds</td>
+              <td class=”lp-compare__col-us”>Under 1 second</td>
+            </tr>
+            <tr>
+              <td>Ownership</td>
+              <td>You rent it</td>
+              <td class=”lp-compare__col-us”>You own it</td>
+            </tr>
+            <tr>
+              <td>SEO control</td>
+              <td>Limited</td>
+              <td class=”lp-compare__col-us”>Full control</td>
+            </tr>
+            <tr>
+              <td>Code quality</td>
+              <td>Bloated templates</td>
+              <td class=”lp-compare__col-us”>Clean, minimal code</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
@@ -319,6 +579,7 @@
           <a href="tel:02034887077" data-ga-event="phone_click_pricing">Call us on 020 3488 7077</a>
           — we'll give you an honest recommendation.
         </p>
+        <p class="lp-scarcity">We take on a limited number of projects each month to ensure quality. Get in touch early to secure your slot.</p>
       </div>
     </section>
 

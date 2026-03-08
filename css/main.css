@@ -2031,62 +2031,235 @@
   }
 
   /* =======================================================================
-     5. LP INCLUDES — What's included
+     5. LP INCLUDES — What's included (4 feature blocks)
      ======================================================================= */
   .lp-includes {
     background: var(--color-bg-subtle);
   }
 
-  .lp-includes__grid {
+  .lp-includes__blocks {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-12);
-    align-items: start;
+    grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+    gap: var(--space-6);
   }
 
-  @media (min-width: 64rem) {
-    .lp-includes__grid {
-      grid-template-columns: 1.2fr 0.8fr;
-    }
-  }
-
-  .lp-includes__checklist {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  .lp-includes__block {
     display: flex;
     flex-direction: column;
-    gap: var(--space-3);
+    gap: var(--space-4);
+    padding: var(--space-8);
+    text-align: center;
+    align-items: center;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    transition: border-color var(--transition-fast);
   }
 
-  .lp-includes__checklist li {
-    display: flex;
-    align-items: baseline;
-    gap: var(--space-3);
-    font-size: var(--text-body);
-    color: var(--color-text);
+  .lp-includes__block:hover {
+    border-color: var(--color-border-strong);
   }
 
-  .lp-includes__checklist li svg {
-    width: 1em;
-    height: 1em;
-    flex-shrink: 0;
+  .lp-includes__block svg {
+    width: var(--space-12);
+    height: var(--space-12);
     color: var(--color-accent);
   }
 
-  .lp-includes__pullquote {
-    background: var(--color-bg-dark);
-    border-left: 4px solid var(--color-accent);
-    border-radius: var(--radius-lg);
-    padding: var(--space-8);
+  .lp-includes__block h3 {
+    font-size: var(--text-h4);
+    color: var(--color-heading);
   }
 
-  .lp-includes__pullquote p {
+  .lp-includes__block p {
+    color: var(--color-text-muted);
+    line-height: var(--leading-normal);
+  }
+
+  /* =======================================================================
+     5b. PULLQUOTE — Industry stat
+     ======================================================================= */
+  .lp-pullquote {
+    text-align: center;
+    max-inline-size: 44rem;
+    margin-inline: auto;
+    padding: var(--space-10);
+    background: var(--color-bg-dark);
+    border-radius: var(--radius-lg);
+    border-inline-start: 4px solid var(--color-accent);
+  }
+
+  .lp-pullquote__text {
     font-size: var(--text-h3);
     font-style: italic;
     line-height: var(--leading-snug);
     color: var(--color-text-on-dark);
-    margin: 0;
+    margin-block-end: var(--space-4);
+  }
+
+  .lp-pullquote__cite {
+    font-size: var(--text-small);
+    color: var(--color-text-subtle);
+    font-style: normal;
+  }
+
+  /* =======================================================================
+     5c. HOW IT WORKS — 3-step process
+     ======================================================================= */
+  .lp-steps {
+    background: var(--color-bg-dark);
+  }
+
+  .lp-steps .section-heading {
+    color: #fff;
+  }
+
+  .lp-steps__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+    text-align: center;
+    max-inline-size: 56rem;
+    margin-inline: auto;
+  }
+
+  @media (max-width: 47.999rem) {
+    .lp-steps__grid {
+      grid-template-columns: 1fr;
+      max-inline-size: 28rem;
+    }
+  }
+
+  .lp-steps__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-8);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+  }
+
+  .lp-steps__number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--space-12);
+    height: var(--space-12);
+    border-radius: 50%;
+    background: var(--color-accent);
+    color: #fff;
+    font-size: var(--text-h3);
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .lp-steps__item h3 {
+    font-size: var(--text-h4);
+    color: #fff;
+  }
+
+  .lp-steps__item p {
+    color: rgba(226, 232, 240, 0.75);
+    line-height: var(--leading-normal);
+  }
+
+  /* =======================================================================
+     5d. COMPARISON TABLE — Template vs hand-coded
+     ======================================================================= */
+  .lp-compare__table {
+    width: 100%;
+    max-inline-size: 48rem;
+    margin-inline: auto;
+    border-collapse: collapse;
+    font-size: var(--text-body);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .lp-compare__table th,
+  .lp-compare__table td {
+    padding: var(--space-4) var(--space-6);
+    text-align: left;
+  }
+
+  .lp-compare__table thead th {
+    font-size: var(--text-small);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-bg-muted);
+  }
+
+  .lp-compare__table thead th:first-child {
+    color: var(--color-text-muted);
+  }
+
+  .lp-compare__table thead th:nth-child(2) {
+    color: var(--color-text-muted);
+  }
+
+  .lp-compare__table thead th:nth-child(3) {
+    color: var(--color-heading);
+  }
+
+  .lp-compare__table tbody td {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .lp-compare__table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .lp-compare__table tbody td:first-child {
+    font-weight: 600;
+    color: var(--color-heading);
+  }
+
+  .lp-compare__table tbody td:nth-child(2) {
+    color: var(--color-text-muted);
+  }
+
+  .lp-compare__table tbody td:nth-child(3) {
+    font-weight: 600;
+    color: var(--color-heading);
+  }
+
+  .lp-compare__col-us {
+    background-color: rgba(249, 115, 22, 0.05);
+  }
+
+  @media (max-width: 47.999rem) {
+    .lp-compare__table {
+      font-size: var(--text-small);
+    }
+
+    .lp-compare__table th,
+    .lp-compare__table td {
+      padding: var(--space-3);
+    }
+  }
+
+  /* =======================================================================
+     5e. FEATURED PRICING CARD & SCARCITY NOTE
+     ======================================================================= */
+  .pricing-card--featured {
+    border-width: 2px;
+    transform: scale(1.03);
+    z-index: 1;
+    position: relative;
+  }
+
+  .lp-scarcity {
+    font-size: var(--text-small);
+    color: var(--color-text-muted);
+    text-align: center;
+    margin-block-start: var(--space-6);
+    font-style: italic;
   }
 
   /* --- LP pricing: 4 cards on one row at desktop -------------------------- */
@@ -2391,6 +2564,7 @@
   .lp-footer a:hover {
     color: var(--color-accent);
   }
+
 }
 
 
