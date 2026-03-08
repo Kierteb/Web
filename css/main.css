@@ -1878,7 +1878,7 @@
      ======================================================================= */
   .lp-hero {
     background:
-      radial-gradient(circle, rgba(249,115,22,0.08) 1px, transparent 1px),
+      radial-gradient(circle, rgba(59, 130, 246, 0.22) 1px, transparent 1px),
       var(--color-bg-dark);
     background-size: 28px 28px;
     padding-block: clamp(var(--space-20), 12vw, var(--space-32));
