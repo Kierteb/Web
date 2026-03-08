@@ -1795,7 +1795,6 @@
     z-index: 100;
     background: var(--color-white);
     border-bottom: 1px solid var(--color-border);
-    max-height: 64px;
     padding: var(--space-3) 0;
   }
 
@@ -1813,8 +1812,16 @@
   }
 
   .lp-header__logo img {
-    height: 2.5rem;
+    height: 3.5rem;
     width: auto;
+  }
+
+  .lp-header__logo-text {
+    font-size: var(--text-body);
+    font-weight: 700;
+    color: var(--color-heading);
+    letter-spacing: var(--tracking-tight);
+    white-space: nowrap;
   }
 
   .lp-header__phone {
