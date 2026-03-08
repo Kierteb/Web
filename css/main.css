@@ -1218,7 +1218,7 @@
     font-size: var(--text-base);
     color: var(--color-text-muted);
     line-height: 1.6;
-    max-inline-size: 38ch;
+    max-inline-size: 56ch;
   }
 
 
