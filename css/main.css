@@ -1199,24 +1199,41 @@
   /* --- Trades "more" block ------------------------------------------------ */
 
   .trades-more {
-    margin-block-start: var(--space-24);
-    text-align: center;
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+    padding: var(--space-6) var(--space-8);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
   }
 
   .trades-more__heading {
     font-size: var(--text-base);
     font-weight: 600;
     color: var(--color-heading);
-    margin-block-end: var(--space-4);
+    white-space: nowrap;
   }
 
   .trades-more__text {
     font-size: var(--text-small);
     color: var(--color-text-muted);
-    line-height: 1.6;
-    max-width: 36rem;
-    margin-inline: auto;
-    margin-block-end: var(--space-16);
+    line-height: 1.5;
+    flex: 1;
+  }
+
+  .trades-more .button {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  @media (width < 48rem) {
+    .trades-more {
+      flex-direction: column;
+      text-align: center;
+      padding: var(--space-8);
+    }
   }
 
 
