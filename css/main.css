@@ -1947,6 +1947,13 @@
     text-align: center;
   }
 
+  /* --- LP section heading spacing ----------------------------------------- */
+  .lp-includes > .container > h2,
+  .testimonials > .container > h2,
+  .faq > .container > h2 {
+    margin-bottom: var(--space-10);
+  }
+
   .built-different__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
@@ -2047,6 +2054,19 @@
     margin: 0;
   }
 
+  /* --- LP pricing: 4 cards on one row at desktop -------------------------- */
+  @media (min-width: 64rem) {
+    body.lp-page #pricing .card-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @media (min-width: 48rem) and (max-width: 63.999rem) {
+    body.lp-page #pricing .card-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
   /* =======================================================================
      6. TESTIMONIALS — Social proof grid
      ======================================================================= */
@@ -2054,6 +2074,14 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
     gap: var(--space-6);
+  }
+
+  .testimonial-card {
+    padding: var(--space-8);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    border-inline-start: 3px solid var(--color-accent);
   }
 
   .testimonial-card p {
@@ -2094,6 +2122,9 @@
      7. FAQ — Reuses existing .faq-list / .faq-item styles
      ======================================================================= */
   .faq .faq__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
     max-width: var(--container-max);
     margin-inline: auto;
   }
