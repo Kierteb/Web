@@ -1196,6 +1196,33 @@
     flex: 1;
   }
 
+  /* --- Trades "more" block ------------------------------------------------ */
+
+  .trades-more {
+    max-width: 38rem;
+    margin-inline: auto;
+    margin-block-start: var(--space-48);
+    padding: var(--space-32) var(--space-24);
+    text-align: center;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background-color: var(--color-surface);
+  }
+
+  .trades-more__heading {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--color-heading);
+    margin-block-end: var(--space-12);
+  }
+
+  .trades-more__text {
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-block-end: var(--space-24);
+  }
+
 
   /* --- CTA band ----------------------------------------------------------- */
 
