@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://deepwaterdesign.co.uk/sitemap.xml

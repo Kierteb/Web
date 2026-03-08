@@ -2366,3 +2366,195 @@
     color: var(--color-accent);
   }
 }
+
+
+/* ==========================================================================
+   BLOG — Listing & article styles
+   ========================================================================== */
+
+@layer components {
+
+  /* --- Blog card grid (listing page) --------------------------------------- */
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+    gap: var(--space-8);
+  }
+
+  .blog-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    padding: var(--space-8);
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    transition:
+      border-color var(--transition-fast),
+      transform var(--transition-fast);
+  }
+
+  .blog-card:hover {
+    border-color: var(--color-border-strong);
+    transform: translateY(-2px);
+  }
+
+  .blog-card__date {
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: var(--tracking-widest);
+    text-transform: uppercase;
+    color: var(--color-accent);
+    max-inline-size: none;
+  }
+
+  .blog-card__title {
+    font-size: var(--text-h3);
+    line-height: var(--leading-snug);
+  }
+
+  .blog-card__title a {
+    color: var(--color-heading);
+    text-decoration: none;
+    transition: color var(--transition-base);
+  }
+
+  .blog-card__title a:hover {
+    color: var(--color-accent);
+  }
+
+  .blog-card__excerpt {
+    color: var(--color-text-muted);
+    line-height: var(--leading-normal);
+    flex-grow: 1;
+  }
+
+  .blog-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-weight: 600;
+    font-size: var(--text-small);
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: gap var(--transition-fast);
+  }
+
+  .blog-card__link:hover {
+    gap: var(--space-3);
+  }
+
+
+  /* --- Blog article (single post) ------------------------------------------ */
+
+  .article {
+    max-inline-size: 42rem;
+    margin-inline: auto;
+  }
+
+  .article__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: var(--text-small);
+    color: var(--color-text-muted);
+    margin-block-end: var(--space-8);
+    padding-block-end: var(--space-6);
+    border-block-end: 1px solid var(--color-border);
+  }
+
+  .article__date {
+    font-weight: 600;
+    color: var(--color-accent);
+  }
+
+  .article__reading-time {
+    color: var(--color-text-subtle);
+  }
+
+  .article__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .article__body h2 {
+    font-size: var(--text-h2);
+    margin-block-start: var(--space-8);
+    color: var(--color-heading);
+  }
+
+  .article__body p {
+    font-size: var(--text-body);
+    line-height: var(--leading-normal);
+    color: var(--color-text-muted);
+    max-inline-size: none;
+  }
+
+  .article__body ul,
+  .article__body ol {
+    padding-inline-start: var(--space-6);
+    color: var(--color-text-muted);
+    line-height: var(--leading-normal);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .article__body strong {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  .article__body a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    transition: color var(--transition-base);
+  }
+
+  .article__body a:hover {
+    color: var(--color-accent-hover);
+  }
+
+  .article__cta {
+    margin-block-start: var(--space-8);
+    padding: var(--space-8);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-inline-start: 4px solid var(--color-accent);
+    border-radius: var(--radius-lg);
+  }
+
+  .article__cta p {
+    margin-block-end: var(--space-4);
+  }
+
+  .article__body .button {
+    color: var(--color-white);
+    text-decoration: none;
+  }
+
+  .article__body .button:hover {
+    color: var(--color-white);
+  }
+
+  .article__back {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-small);
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    margin-block-end: var(--space-6);
+    transition: color var(--transition-base);
+  }
+
+  .article__back:hover {
+    color: var(--color-accent);
+  }
+}
