@@ -1809,6 +1809,12 @@
     body.lp-page { padding-bottom: 64px; }
   }
 
+  /* Tighter section padding on landing pages */
+  body.lp-page section,
+  body.lp-page .lp-includes {
+    padding-block: clamp(var(--space-12), 6vw, var(--space-24));
+  }
+
   /* ---- .bg-alt utility --------------------------------------------------- */
   .bg-alt { background: var(--color-bg-subtle); }
 
@@ -1989,10 +1995,21 @@
     margin-bottom: var(--space-10);
   }
 
+  /* Alternating section backgrounds on landing pages */
+  body.lp-page .testimonials {
+    background: var(--color-bg-subtle);
+  }
+
   .built-different__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
     gap: var(--space-6);
+  }
+
+  @media (min-width: 64rem) {
+    .built-different__grid--4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 
   .built-different__card {
@@ -2282,6 +2299,11 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
     gap: var(--space-6);
+    align-items: stretch;
+  }
+
+  .testimonials__grid > li {
+    display: flex;
   }
 
   .testimonial-card {
@@ -2290,6 +2312,8 @@
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
     border-inline-start: 3px solid var(--color-accent);
+    display: flex;
+    flex-direction: column;
   }
 
   .testimonial-card p {
@@ -2300,7 +2324,8 @@
   }
 
   .testimonial-card footer {
-    margin-top: var(--space-4);
+    margin-top: auto;
+    padding-top: var(--space-4);
   }
 
   .testimonial-card cite {
@@ -2554,6 +2579,7 @@
   .lp-footer p {
     font-size: var(--text-small);
     color: var(--color-text-muted);
+    max-inline-size: none;
   }
 
   .lp-footer a {

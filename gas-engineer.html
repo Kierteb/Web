@@ -33,6 +33,110 @@
   <!-- Styles -->
   <link rel="stylesheet" href="/css/main.css">
 
+  <!--
+    Page-specific overrides.
+    The @layer cascade in main.css prevents @layer components styles from
+    rendering on landing pages. These unlayered rules guarantee the pullquote,
+    comparison table, and scarcity note render correctly.
+  -->
+  <style>
+    .lp-pullquote {
+      text-align: center;
+      max-inline-size: 44rem;
+      margin-inline: auto;
+      padding: var(--space-10);
+      background: var(--color-bg-dark);
+      border-radius: var(--radius-lg);
+      border-inline-start: 4px solid var(--color-accent);
+    }
+    .lp-pullquote__text {
+      font-size: var(--text-h3);
+      font-style: italic;
+      line-height: var(--leading-snug);
+      color: var(--color-text-on-dark);
+      margin-block-end: var(--space-4);
+    }
+    .lp-pullquote__cite {
+      font-size: var(--text-small);
+      color: var(--color-text-subtle);
+      font-style: normal;
+    }
+
+    .lp-compare__table {
+      width: 100%;
+      max-inline-size: 48rem;
+      margin-inline: auto;
+      border-collapse: collapse;
+      font-size: var(--text-body);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .lp-compare__table th,
+    .lp-compare__table td {
+      padding: var(--space-4) var(--space-6);
+      text-align: left;
+    }
+    .lp-compare__table thead th {
+      font-size: var(--text-small);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-wide);
+      border-bottom: 1px solid var(--color-border);
+      background: var(--color-bg-muted);
+    }
+    .lp-compare__table thead th:first-child,
+    .lp-compare__table thead th:nth-child(2) {
+      color: var(--color-text-muted);
+    }
+    .lp-compare__table thead th:nth-child(3) {
+      color: var(--color-heading);
+    }
+    .lp-compare__table tbody td {
+      border-bottom: 1px solid var(--color-border);
+    }
+    .lp-compare__table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .lp-compare__table tbody td:first-child {
+      font-weight: 600;
+      color: var(--color-heading);
+    }
+    .lp-compare__table tbody td:nth-child(2) {
+      color: var(--color-text-muted);
+    }
+    .lp-compare__table tbody td:nth-child(3) {
+      font-weight: 600;
+      color: var(--color-heading);
+    }
+    .lp-compare__col-us {
+      background-color: rgba(249, 115, 22, 0.05);
+    }
+    @media (max-width: 47.999rem) {
+      .lp-compare__table { font-size: var(--text-small); }
+      .lp-compare__table th,
+      .lp-compare__table td { padding: var(--space-3); }
+    }
+
+    .lp-scarcity {
+      font-size: var(--text-body);
+      color: var(--color-heading);
+      text-align: center;
+      margin-block-start: var(--space-8);
+      font-weight: 600;
+      max-inline-size: 48ch;
+      margin-inline: auto;
+    }
+
+    .pricing-card--featured {
+      border-width: 2px;
+      transform: scale(1.03);
+      z-index: 1;
+      position: relative;
+    }
+  </style>
+
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CWGY73NC0C"></script>
   <script>
@@ -76,7 +180,7 @@
         "name": "Do you understand the gas engineering industry?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "We've built sites for gas engineers and heating businesses and understand the services, the accreditations, and the compliance requirements involved. We know that Gas Safe registration isn't just a badge — it's the first thing a customer looks for, and we make sure it's impossible to miss."
+          "text": "We've built sites for gas engineers and heating businesses and understand the services, the accreditations, and the compliance requirements involved. We know that Gas Safe registration isn't just a badge. It's the first thing a customer looks for, and we make sure it's impossible to miss."
         }
       },
       {
@@ -84,7 +188,7 @@
         "name": "Will my gas engineer website show up on Google?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Every site we build includes on-page SEO as standard — correct title tags, meta descriptions, schema markup, and a site structure Google can crawl properly. We also set up Google Search Console on Growth and Pro packages so you can track your rankings. Appearing on page one takes time and depends on competition in your area — but the technical foundations are right from day one."
+          "text": "Every site we build includes on-page SEO as standard, including correct title tags, meta descriptions, schema markup, and a site structure Google can crawl properly. We also set up Google Search Console on Growth and Pro packages so you can track your rankings. Appearing on page one takes time and depends on competition in your area, but the technical foundations are right from day one."
         }
       },
       {
@@ -92,7 +196,7 @@
         "name": "Can you include a landlord certificate section?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes — CP12 certificates are a consistent revenue stream for gas engineers. We build a dedicated section covering what a landlord needs to know, why annual certification is a legal requirement, and a clear CTA to book. This section targets landlord-specific search terms as well as general gas engineer searches."
+          "text": "Yes. CP12 certificates are a consistent revenue stream for gas engineers. We build a dedicated section covering what a landlord needs to know, why annual certification is a legal requirement, and a clear CTA to book. This section targets landlord-specific search terms as well as general gas engineer searches."
         }
       },
       {
@@ -108,7 +212,7 @@
         "name": "How quickly can you build my website?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Every package includes a 14-day delivery guarantee (10 days on the Pro package). The clock starts the day we receive all your content — logo, copy, and any photos. We'll send you a clear checklist of everything we need before we begin."
+          "text": "Every package includes a 14-day delivery guarantee (10 days on the Pro package). The clock starts the day we receive all your content (logo, copy, and any photos). We'll send you a clear checklist of everything we need before we begin."
         }
       },
       {
@@ -116,7 +220,7 @@
         "name": "Do I own the website when it's finished?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes — completely. The code is yours. The domain is yours. You're not locked into any platform or paying a monthly fee just to keep the lights on. If you ever want to move or make changes yourself, you can. No strings attached."
+          "text": "Yes, completely. The code is yours. The domain is yours. You're not locked into any platform or paying a monthly fee just to keep the lights on. If you ever want to move or make changes yourself, you can. No strings attached."
         }
       }
     ]
@@ -127,7 +231,7 @@
 
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- ===== SECTION 1: MINIMAL HEADER ===== -->
+  <!-- ===== HEADER ===== -->
   <header class="lp-header">
     <div class="container">
       <a href="/" class="lp-header__logo" aria-label="Deepwater Design — Home">
@@ -143,10 +247,10 @@
     </div>
   </header>
 
-  <!-- ===== MAIN CONTENT ===== -->
+  <!-- ===== MAIN ===== -->
   <main id="main-content">
 
-    <!-- ===== SECTION 2: HERO ===== -->
+    <!-- ===== HERO ===== -->
     <section class="lp-hero" aria-labelledby="hero-heading">
       <div class="container">
         <p class="lp-hero__eyebrow">Website Design for Gas Engineers</p>
@@ -154,7 +258,7 @@
           More gas engineering jobs.<br>
           A website that works for you.
         </h1>
-        <p class="lp-hero__subtext">Hand-coded websites for Gas Safe registered engineers — built to generate boiler and heating enquiries year-round.</p>
+        <p class="lp-hero__subtext">Hand-coded websites for Gas Safe registered engineers, built to generate boiler and heating enquiries year-round.</p>
         <div class="lp-hero__ctas">
           <a href="#enquiry" class="button button--accent button--large">Get a Free Quote</a>
           <a href="tel:02034887077" class="lp-hero__phone-link" data-ga-event="phone_click_hero">Or call: 020 3488 7077</a>
@@ -162,7 +266,7 @@
       </div>
     </section>
 
-    <!-- ===== SECTION 3: TRUST BAR ===== -->
+    <!-- ===== TRUST BAR ===== -->
     <div class="lp-trust" aria-label="Trust signals">
       <ul class="lp-trust__list" role="list">
         <li>
@@ -188,7 +292,7 @@
       </ul>
     </div>
 
-    <!-- ===== SECTION 4: PAIN POINTS ===== -->
+    <!-- ===== PAIN POINTS ===== -->
     <section class="built-different" aria-labelledby="pain-heading">
       <div class="container">
         <h2 id="pain-heading" class="section-heading" data-reveal>Does this sound familiar?</h2>
@@ -215,81 +319,151 @@
               <path d="M16 20h8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
             </svg>
             <h3>Your current site doesn't reflect your qualifications</h3>
-            <p>Gas Safe registration, G3 Unvented, CIPHE — these are serious credentials. A dated template site undersells the level of expertise you actually bring to every job.</p>
+            <p>Gas Safe registration, G3 Unvented, CIPHE. These are serious credentials. A dated template site undersells the level of expertise you actually bring to every job.</p>
           </li>
         </ul>
       </div>
     </section>
 
-    <!-- ===== SECTION 5: WHAT'S INCLUDED ===== -->
-    <section class="lp-includes" aria-labelledby="includes-heading">
+    <!-- ===== PULLQUOTE ===== -->
+    <section class="lp-includes" aria-label="Industry insight">
       <div class="container">
-        <h2 id="includes-heading" data-reveal>What your gas engineer website includes</h2>
-        <div class="lp-includes__grid">
-          <ul class="lp-includes__checklist" role="list" data-reveal>
-            <li>
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Homepage with Gas Safe registration number displayed clearly
-            </li>
-            <li>
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Services page covering boilers, heating, landlord certs &amp; more
-            </li>
-            <li>
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Emergency callout section with prominent tap-to-call
-            </li>
-            <li>
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              About page featuring all your accreditations
-            </li>
-            <li>
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Contact form — enquiries straight to your inbox
-            </li>
-            <li>
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Mobile-first design — fast on any phone
-            </li>
-            <li>
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Google Maps showing your service area
-            </li>
-            <li>
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Local SEO — built for "boiler repair near me" searches
-            </li>
-            <li>
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Landlord certificate landing section (CP12)
-            </li>
-            <li>
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              You own the code — no platform fees
-            </li>
-          </ul>
-          <blockquote class="lp-includes__pullquote" data-reveal>
-            <p>When a boiler breaks down at midnight in January, the first Gas Safe engineer with a professional website gets the call.</p>
-          </blockquote>
-        </div>
+        <blockquote class="lp-pullquote" data-reveal>
+          <p class="lp-pullquote__text">"When a boiler breaks down at midnight in January, the first Gas Safe engineer with a professional website gets the call."</p>
+        </blockquote>
       </div>
     </section>
 
-    <!-- ===== SECTION 6: PRICING ===== -->
+    <!-- ===== WHAT'S INCLUDED ===== -->
+    <section class="built-different" aria-labelledby="includes-heading">
+      <div class="container">
+        <h2 id="includes-heading" class="section-heading" data-reveal>What your gas engineer website includes</h2>
+        <ul class="built-different__grid built-different__grid--4" role="list">
+          <li class="built-different__card" data-reveal>
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M15 20l4 4 7-8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h3>Designed to Convert</h3>
+            <p>Homepage with Gas Safe registration displayed clearly, emergency callout CTA above the fold, tap-to-call on every page, and a working contact form.</p>
+          </li>
+          <li class="built-different__card" data-reveal data-delay="1">
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 40 40" fill="none">
+              <rect x="10" y="6" width="20" height="28" rx="3" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M17 30h6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+            <h3>Built for Mobile</h3>
+            <p>Mobile-first design that loads fast on any phone. When a boiler breaks down, customers search on mobile first. Your site needs to work there.</p>
+          </li>
+          <li class="built-different__card" data-reveal data-delay="2">
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 40 40" fill="none">
+              <circle cx="18" cy="18" r="12" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M27 27l7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+            <h3>Found on Google</h3>
+            <p>Local SEO baked in from day one, Google Search Console setup on Growth and Pro packages, and a site structure built for "boiler repair near me" searches.</p>
+          </li>
+          <li class="built-different__card" data-reveal data-delay="3">
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 40 40" fill="none">
+              <rect x="6" y="14" width="28" height="16" rx="2" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M12 14V10a8 8 0 0 1 16 0v4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="20" cy="22" r="2" fill="currentColor"/>
+            </svg>
+            <h3>Owned by You</h3>
+            <p>You own the code outright. No monthly platform fees, no lock-in, no renting. If you ever want to move or make changes yourself, you can.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== HOW IT WORKS ===== -->
+    <section class="built-different bg-alt" aria-labelledby="steps-heading">
+      <div class="container">
+        <h2 id="steps-heading" class="section-heading" data-reveal>How it works</h2>
+        <ul class="built-different__grid" role="list">
+          <li class="built-different__card" data-reveal>
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="20" r="16" stroke="currentColor" stroke-width="2.5"/>
+              <text x="20" y="25" text-anchor="middle" fill="currentColor" font-size="16" font-weight="800">1</text>
+            </svg>
+            <h3>Get your free quote</h3>
+            <p>Tell us about your business and we'll recommend the right package. No obligation.</p>
+          </li>
+          <li class="built-different__card" data-reveal data-delay="1">
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="20" r="16" stroke="currentColor" stroke-width="2.5"/>
+              <text x="20" y="25" text-anchor="middle" fill="currentColor" font-size="16" font-weight="800">2</text>
+            </svg>
+            <h3>We build your site</h3>
+            <p>Hand-coded from scratch. You'll see a preview before anything goes live.</p>
+          </li>
+          <li class="built-different__card" data-reveal data-delay="2">
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="20" r="16" stroke="currentColor" stroke-width="2.5"/>
+              <text x="20" y="25" text-anchor="middle" fill="currentColor" font-size="16" font-weight="800">3</text>
+            </svg>
+            <h3>Go live in 14 days</h3>
+            <p>Your site is live, ranking, and generating enquiries.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== COMPARISON TABLE ===== -->
+    <section class="lp-includes" aria-labelledby="compare-heading">
+      <div class="container">
+        <h2 id="compare-heading" class="section-heading" data-reveal>Template sites vs hand-coded</h2>
+        <table class="lp-compare__table" data-reveal>
+          <thead>
+            <tr>
+              <th scope="col"><span class="visually-hidden">Feature</span></th>
+              <th scope="col">Template Sites<span class="visually-hidden"> (Wix, Squarespace)</span></th>
+              <th scope="col" class="lp-compare__col-us">Deepwater Design</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Monthly cost</td>
+              <td>&pound;20&ndash;40/month forever</td>
+              <td class="lp-compare__col-us">One-off from &pound;399</td>
+            </tr>
+            <tr>
+              <td>Load speed</td>
+              <td>3&ndash;6 seconds</td>
+              <td class="lp-compare__col-us">Under 1 second</td>
+            </tr>
+            <tr>
+              <td>Ownership</td>
+              <td>You rent it</td>
+              <td class="lp-compare__col-us">You own it</td>
+            </tr>
+            <tr>
+              <td>SEO control</td>
+              <td>Limited</td>
+              <td class="lp-compare__col-us">Full control</td>
+            </tr>
+            <tr>
+              <td>Code quality</td>
+              <td>Bloated templates</td>
+              <td class="lp-compare__col-us">Clean, minimal code</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===== PRICING ===== -->
     <section id="pricing" aria-labelledby="pricing-heading">
       <div class="container">
-        <div class="section-header">
-          <span class="section-header__kicker">Pricing</span>
-          <h2 id="pricing-heading">Fixed prices. No surprises.</h2>
-          <p>Every package includes 14-day delivery and full ownership. No platform fees. No lock-in.</p>
-        </div>
-        <ul class="card-grid" role="list">
+        <h2 id="pricing-heading" class="section-heading" data-reveal>Fixed prices. No surprises.</h2>
+        <p class="section-heading" style="font-size: var(--text-body); font-weight: 400; color: var(--color-text-muted); margin-block-start: calc(var(--space-12) * -1 + var(--space-4)); margin-block-end: var(--space-12); text-align: center;">Every package includes 14-day delivery and full ownership. No platform fees. No lock-in.</p>
+        <ul class="built-different__grid built-different__grid--4" role="list">
           <li class="pricing-card" data-reveal>
             <p class="pricing-card__tier">Essential</p>
             <p class="pricing-card__price"><sup>£</sup>399</p>
             <p class="pricing-card__ideal">Ideal for sole traders who just need an online presence</p>
             <p class="pricing-card__feature">Single-page site, tap-to-call, Google Maps, basic SEO</p>
-            <a href="#enquiry" class="button button--outline">Get Started</a>
+            <a href="#enquiry" class="button button--accent">Get Started</a>
           </li>
           <li class="pricing-card pricing-card--featured" data-reveal data-delay="1">
             <p class="pricing-card__badge" aria-label="Most popular package">Most Popular</p>
@@ -297,32 +471,33 @@
             <p class="pricing-card__price"><sup>£</sup>749</p>
             <p class="pricing-card__ideal">Ideal for new businesses and sole traders needing a full site</p>
             <p class="pricing-card__feature">4 pages, contact form, Google Maps, on-page SEO</p>
-            <a href="#enquiry" class="button button--outline">Get Started</a>
+            <a href="#enquiry" class="button button--accent">Get Started</a>
           </li>
           <li class="pricing-card" data-reveal data-delay="2">
             <p class="pricing-card__tier">Growth</p>
             <p class="pricing-card__price"><sup>£</sup>1,149</p>
             <p class="pricing-card__ideal">Ideal for established trades businesses</p>
             <p class="pricing-card__feature">Up to 6 pages, enhanced SEO, analytics, speed optimised</p>
-            <a href="#enquiry" class="button button--outline">Get Started</a>
+            <a href="#enquiry" class="button button--accent">Get Started</a>
           </li>
           <li class="pricing-card" data-reveal data-delay="3">
             <p class="pricing-card__tier">Pro</p>
             <p class="pricing-card__price"><sup>£</sup>1,499</p>
             <p class="pricing-card__ideal">Ideal for trades businesses focused on growth and ranking</p>
             <p class="pricing-card__feature">Up to 8 pages, blog, Search Console, call tracking</p>
-            <a href="#enquiry" class="button button--outline">Get Started</a>
+            <a href="#enquiry" class="button button--accent">Get Started</a>
           </li>
         </ul>
         <p class="pricing-note">
           Not sure which package is right for you?
           <a href="tel:02034887077" data-ga-event="phone_click_pricing">Call us on 020 3488 7077</a>
-          — we'll give you an honest recommendation.
+          and we'll give you an honest recommendation.
         </p>
+        <p class="lp-scarcity">We take on a limited number of projects each month to ensure quality. Get in touch early to secure your slot.</p>
       </div>
     </section>
 
-    <!-- ===== SECTION 7: SOCIAL PROOF ===== -->
+    <!-- ===== TESTIMONIALS ===== -->
     <section class="testimonials" aria-labelledby="testimonials-heading">
       <div class="container">
         <h2 id="testimonials-heading" data-reveal>What our clients say</h2>
@@ -331,7 +506,7 @@
             <blockquote class="testimonial-card" data-reveal>
               <p>Last October when the boilers started breaking down, we were getting calls from the site within the first week. Normally I rely on the letting agents for CP12 work but this has opened up a whole new stream of domestic customers.</p>
               <footer>
-                <cite>— James Hargreaves, BAAM Materials, London</cite>
+                <cite>Martin, BAAM Materials, London</cite>
               </footer>
             </blockquote>
           </li>
@@ -339,7 +514,7 @@
             <blockquote class="testimonial-card" data-reveal>
               <p>They put the Gas Safe number right at the top where it should be. Sounds simple but my last website had it buried on the about page. Customers actually check that stuff before they let you near their boiler.</p>
               <footer>
-                <cite>— Dave Morton, DM Plumbing, Birmingham</cite>
+                <cite>Dave Morton, DM Plumbing, Birmingham</cite>
               </footer>
             </blockquote>
           </li>
@@ -347,7 +522,7 @@
             <blockquote class="testimonial-card" data-reveal>
               <p>Solid site, done fast. No messing around. I sent over the details on a Monday and had the first draft by Thursday. Only needed a couple of tweaks after that.</p>
               <footer>
-                <cite>— Sarah Keane, Keane Electrical, Manchester</cite>
+                <cite>Sarah Keane, Keane Electrical, Manchester</cite>
               </footer>
             </blockquote>
           </li>
@@ -358,22 +533,22 @@
       </div>
     </section>
 
-    <!-- ===== SECTION 8: FAQ ===== -->
+    <!-- ===== FAQ ===== -->
     <section class="faq" aria-labelledby="faq-heading">
       <div class="container container--prose">
         <h2 id="faq-heading" data-reveal>Questions about your gas engineer website</h2>
         <div class="faq__list">
           <details class="faq-item">
             <summary>Do you understand the gas engineering industry?</summary>
-            <p class="faq-item__body">We've built sites for gas engineers and heating businesses and understand the services, the accreditations, and the compliance requirements involved. We know that Gas Safe registration isn't just a badge — it's the first thing a customer looks for, and we make sure it's impossible to miss.</p>
+            <p class="faq-item__body">We've built sites for gas engineers and heating businesses and understand the services, the accreditations, and the compliance requirements involved. We know that Gas Safe registration isn't just a badge. It's the first thing a customer looks for, and we make sure it's impossible to miss.</p>
           </details>
           <details class="faq-item">
             <summary>Will my gas engineer website show up on Google?</summary>
-            <p class="faq-item__body">Every site we build includes on-page SEO as standard — correct title tags, meta descriptions, schema markup, and a site structure Google can crawl properly. We also set up Google Search Console on Growth and Pro packages so you can track your rankings. Appearing on page one takes time and depends on competition in your area — but the technical foundations are right from day one.</p>
+            <p class="faq-item__body">Every site we build includes on-page SEO as standard, including correct title tags, meta descriptions, schema markup, and a site structure Google can crawl properly. We also set up Google Search Console on Growth and Pro packages so you can track your rankings. Appearing on page one takes time and depends on competition in your area, but the technical foundations are right from day one.</p>
           </details>
           <details class="faq-item">
             <summary>Can you include a landlord certificate section?</summary>
-            <p class="faq-item__body">Yes — CP12 certificates are a consistent revenue stream for gas engineers. We build a dedicated section covering what a landlord needs to know, why annual certification is a legal requirement, and a clear CTA to book. This section targets landlord-specific search terms as well as general gas engineer searches.</p>
+            <p class="faq-item__body">Yes. CP12 certificates are a consistent revenue stream for gas engineers. We build a dedicated section covering what a landlord needs to know, why annual certification is a legal requirement, and a clear CTA to book. This section targets landlord-specific search terms as well as general gas engineer searches.</p>
           </details>
           <details class="faq-item">
             <summary>Can you handle multiple services like power flushing and bathroom installation?</summary>
@@ -381,17 +556,17 @@
           </details>
           <details class="faq-item">
             <summary>How quickly can you build my website?</summary>
-            <p class="faq-item__body">Every package includes a 14-day delivery guarantee (10 days on the Pro package). The clock starts the day we receive all your content — logo, copy, and any photos. We'll send you a clear checklist of everything we need before we begin.</p>
+            <p class="faq-item__body">Every package includes a 14-day delivery guarantee (10 days on the Pro package). The clock starts the day we receive all your content (logo, copy, and any photos). We'll send you a clear checklist of everything we need before we begin.</p>
           </details>
           <details class="faq-item">
             <summary>Do I own the website when it's finished?</summary>
-            <p class="faq-item__body">Yes — completely. The code is yours. The domain is yours. You're not locked into any platform or paying a monthly fee just to keep the lights on. If you ever want to move or make changes yourself, you can. No strings attached.</p>
+            <p class="faq-item__body">Yes, completely. The code is yours. The domain is yours. You're not locked into any platform or paying a monthly fee just to keep the lights on. If you ever want to move or make changes yourself, you can. No strings attached.</p>
           </details>
         </div>
       </div>
     </section>
 
-    <!-- ===== SECTION 9: ENQUIRY FORM ===== -->
+    <!-- ===== ENQUIRY FORM ===== -->
     <section class="lp-enquiry" id="enquiry" aria-labelledby="enquiry-heading">
       <div class="container">
         <h2 id="enquiry-heading">Get your free gas engineer website quote</h2>
@@ -451,7 +626,7 @@
 
         <div class="form__success" hidden aria-live="polite">
           <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
-          <h3>Got it — thank you.</h3>
+          <h3>Got it, thank you.</h3>
           <p>We'll be in touch within 24 hours. If you need us sooner, call <a href="tel:02034887077">020 3488 7077</a>.</p>
         </div>
       </div>
@@ -469,7 +644,7 @@
     </a>
   </div>
 
-  <!-- ===== MINIMAL FOOTER ===== -->
+  <!-- ===== FOOTER ===== -->
   <footer class="lp-footer">
     <div class="container">
       <p>
@@ -485,7 +660,9 @@
   <!-- Landing page JS -->
   <script type="module">
     import { initScrollReveal } from '/js/reveal.js';
+    import { initTracking } from '/js/tracking.js';
     initScrollReveal();
+    initTracking();
 
     // UTM capture
     (function() {
