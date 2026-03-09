@@ -1995,11 +1995,6 @@
     margin-bottom: var(--space-10);
   }
 
-  /* Alternating section backgrounds on landing pages */
-  body.lp-page .testimonials {
-    background: var(--color-bg-subtle);
-  }
-
   .built-different__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
