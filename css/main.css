@@ -2295,6 +2295,10 @@
   /* =======================================================================
      6. TESTIMONIALS — Social proof grid
      ======================================================================= */
+  .testimonials {
+    background: var(--color-bg-subtle);
+  }
+
   .testimonials__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
