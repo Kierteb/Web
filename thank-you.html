@@ -32,11 +32,15 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-CWGY73NC0C');
+    gtag('config', 'AW-1110961272');
 
-    // Fire conversion event on page load
+    // Conversion events — fires when visitor lands here after form submission
     gtag('event', 'form_submission', {
       event_category: 'engagement',
       event_label: 'contact_form'
+    });
+    gtag('event', 'conversion', {
+      send_to: 'AW-1110961272/CONVERSION_LABEL'
     });
   </script>
 </head>

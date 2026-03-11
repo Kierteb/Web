@@ -86,10 +86,7 @@ export function initForms() {
   }
 
   function submitForm(form) {
-    const submitBtn = form.querySelector('[type="submit"]');
-    const successMsg = form.closest('[data-form-wrapper]')
-      ? form.closest('[data-form-wrapper]').querySelector('.form-success')
-      : null;
+    var submitBtn = form.querySelector('[type="submit"]');
 
     if (submitBtn) {
       submitBtn.disabled = true;
@@ -98,8 +95,7 @@ export function initForms() {
 
     fetch(form.action, {
       method: 'POST',
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
+      body: new FormData(form)
     })
     .then(function (res) {
       if (res.ok) {
@@ -109,7 +105,7 @@ export function initForms() {
           submitBtn.disabled = false;
           submitBtn.textContent = 'Send Enquiry';
         }
-        alert('Something went wrong. Please try again or email us directly.');
+        alert('Something went wrong. Please try again or email me directly.');
       }
     })
     .catch(function () {
@@ -117,7 +113,7 @@ export function initForms() {
         submitBtn.disabled = false;
         submitBtn.textContent = 'Send Enquiry';
       }
-      alert('Something went wrong. Please try again or email us directly.');
+      alert('Something went wrong. Please try again or email me directly.');
     });
   }
 }
