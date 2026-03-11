@@ -57,7 +57,13 @@
       "addressCountry": "GB"
     },
     "priceRange": "££",
-    "areaServed": "United Kingdom"
+    "areaServed": "United Kingdom",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "bestRating": "5",
+      "ratingCount": "5"
+    }
   }
   </script>
 </head>
@@ -122,97 +128,69 @@
         </div>
 
         <div class="hero__graphic" aria-hidden="true">
-          <svg class="hero__graphic-svg" viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Outer decorative rings -->
-            <circle cx="240" cy="180" r="218" stroke="#4F5BD5" stroke-width="0.5" stroke-opacity="0.08"/>
-            <circle cx="240" cy="180" r="168" stroke="#2DD4FF" stroke-width="0.5" stroke-opacity="0.05"/>
-            <!-- Corner brackets -->
-            <path d="M10 52 L10 10 L52 10" stroke="#4F5BD5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.35"/>
-            <path d="M470 308 L470 350 L428 350" stroke="#2DD4FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.25"/>
-            <!-- Browser window -->
-            <rect x="32" y="24" width="416" height="298" rx="8" fill="#171A21" fill-opacity="0.8" stroke="#4F5BD5" stroke-width="1.5" stroke-opacity="0.45"/>
-            <!-- Title bar -->
-            <rect x="32" y="24" width="416" height="42" rx="8" fill="#1F2430" fill-opacity="0.95"/>
-            <rect x="32" y="52" width="416" height="14" fill="#1F2430" fill-opacity="0.95"/>
-            <line x1="32" y1="66" x2="448" y2="66" stroke="#2A3140" stroke-width="1"/>
-            <!-- Window dots -->
-            <circle cx="56" cy="45" r="5" fill="#E45858" fill-opacity="0.75"/>
-            <circle cx="74" cy="45" r="5" fill="#F2A93B" fill-opacity="0.75"/>
-            <circle cx="92" cy="45" r="5" fill="#3ECF8E" fill-opacity="0.75"/>
-            <!-- URL bar -->
-            <rect x="116" y="33" width="220" height="24" rx="12" fill="#2A3140"/>
-            <circle cx="131" cy="45" r="4" stroke="#6F768A" stroke-width="1.2"/>
-            <line x1="134" y1="48" x2="136" y2="50" stroke="#6F768A" stroke-width="1.2" stroke-linecap="round"/>
-            <rect x="141" y="42" width="78" height="6" rx="3" fill="#6F768A" fill-opacity="0.45"/>
-            <rect x="224" y="42" width="12" height="6" rx="3" fill="#6F768A" fill-opacity="0.25"/>
-            <rect x="241" y="42" width="28" height="6" rx="3" fill="#6F768A" fill-opacity="0.35"/>
-            <!-- Code line 1 -->
-            <rect x="52" y="78" width="42" height="8" rx="2" fill="#4F5BD5" fill-opacity="0.65"/>
-            <rect x="100" y="78" width="64" height="8" rx="2" fill="#2DD4FF" fill-opacity="0.4"/>
-            <rect x="170" y="78" width="18" height="8" rx="2" fill="#E6E8EE" fill-opacity="0.2"/>
-            <rect x="194" y="78" width="48" height="8" rx="2" fill="#F4B860" fill-opacity="0.45"/>
-            <rect x="248" y="78" width="16" height="8" rx="2" fill="#E6E8EE" fill-opacity="0.15"/>
-            <!-- Code line 2 -->
-            <rect x="68" y="96" width="30" height="7" rx="2" fill="#4F5BD5" fill-opacity="0.45"/>
-            <rect x="104" y="96" width="14" height="7" rx="2" fill="#E6E8EE" fill-opacity="0.18"/>
-            <rect x="124" y="96" width="82" height="7" rx="2" fill="#2DD4FF" fill-opacity="0.3"/>
-            <!-- Code line 3 -->
-            <rect x="68" y="112" width="40" height="7" rx="2" fill="#4F5BD5" fill-opacity="0.4"/>
-            <rect x="114" y="112" width="14" height="7" rx="2" fill="#E6E8EE" fill-opacity="0.18"/>
-            <rect x="134" y="112" width="52" height="7" rx="2" fill="#3ECF8E" fill-opacity="0.35"/>
-            <!-- Code line 4 -->
-            <rect x="68" y="128" width="34" height="7" rx="2" fill="#4F5BD5" fill-opacity="0.38"/>
-            <rect x="108" y="128" width="14" height="7" rx="2" fill="#E6E8EE" fill-opacity="0.18"/>
-            <rect x="128" y="128" width="68" height="7" rx="2" fill="#E6E8EE" fill-opacity="0.15"/>
-            <!-- Code line 5 (comment) -->
-            <rect x="52" y="144" width="14" height="7" rx="2" fill="#6F768A" fill-opacity="0.5"/>
-            <rect x="72" y="144" width="140" height="7" rx="2" fill="#6F768A" fill-opacity="0.25"/>
-            <!-- Code line 6 -->
-            <rect x="68" y="160" width="26" height="7" rx="2" fill="#F4B860" fill-opacity="0.4"/>
-            <rect x="100" y="160" width="14" height="7" rx="2" fill="#E6E8EE" fill-opacity="0.18"/>
-            <rect x="120" y="160" width="46" height="7" rx="2" fill="#2DD4FF" fill-opacity="0.3"/>
-            <!-- Blinking cursor -->
-            <rect class="cursor-blink" x="172" y="158" width="2" height="11" rx="1" fill="#2DD4FF" fill-opacity="0.9"/>
-            <!-- Divider before cards -->
-            <line x1="52" y1="180" x2="428" y2="180" stroke="#2A3140" stroke-width="1" stroke-opacity="0.6"/>
-            <!-- Card 1 -->
-            <rect x="48" y="190" width="118" height="110" rx="5" fill="#1F2430" fill-opacity="0.85" stroke="#2A3140" stroke-width="1"/>
-            <rect x="48" y="190" width="118" height="26" rx="5" fill="#4F5BD5" fill-opacity="0.18"/>
-            <rect x="48" y="204" width="118" height="12" fill="#4F5BD5" fill-opacity="0.18"/>
-            <rect x="60" y="228" width="66" height="6" rx="2" fill="#E6E8EE" fill-opacity="0.18"/>
-            <rect x="60" y="242" width="88" height="5" rx="2" fill="#6F768A" fill-opacity="0.3"/>
-            <rect x="60" y="255" width="58" height="5" rx="2" fill="#6F768A" fill-opacity="0.2"/>
-            <rect x="60" y="274" width="50" height="16" rx="3" fill="#4F5BD5" fill-opacity="0.5"/>
-            <!-- Card 2 featured -->
-            <rect x="180" y="190" width="118" height="110" rx="5" fill="#1F2430" fill-opacity="0.85" stroke="#2DD4FF" stroke-width="1.5" stroke-opacity="0.5"/>
-            <rect x="180" y="190" width="118" height="26" rx="5" fill="#2DD4FF" fill-opacity="0.08"/>
-            <rect x="180" y="204" width="118" height="12" fill="#2DD4FF" fill-opacity="0.08"/>
-            <rect x="209" y="183" width="60" height="13" rx="6.5" fill="#F4B860" fill-opacity="0.92"/>
-            <rect x="192" y="228" width="66" height="6" rx="2" fill="#E6E8EE" fill-opacity="0.18"/>
-            <rect x="192" y="242" width="88" height="5" rx="2" fill="#6F768A" fill-opacity="0.3"/>
-            <rect x="192" y="255" width="58" height="5" rx="2" fill="#6F768A" fill-opacity="0.2"/>
-            <rect x="192" y="274" width="50" height="16" rx="3" fill="#2DD4FF" fill-opacity="0.35"/>
-            <!-- Card 3 -->
-            <rect x="312" y="190" width="118" height="110" rx="5" fill="#1F2430" fill-opacity="0.85" stroke="#2A3140" stroke-width="1"/>
-            <rect x="312" y="190" width="118" height="26" rx="5" fill="#4F5BD5" fill-opacity="0.12"/>
-            <rect x="312" y="204" width="118" height="12" fill="#4F5BD5" fill-opacity="0.12"/>
-            <rect x="324" y="228" width="66" height="6" rx="2" fill="#E6E8EE" fill-opacity="0.18"/>
-            <rect x="324" y="242" width="88" height="5" rx="2" fill="#6F768A" fill-opacity="0.3"/>
-            <rect x="324" y="255" width="58" height="5" rx="2" fill="#6F768A" fill-opacity="0.2"/>
-            <rect x="324" y="274" width="50" height="16" rx="3" fill="#4F5BD5" fill-opacity="0.4"/>
-            <!-- Floating dots top-right -->
-            <circle cx="458" cy="46" r="2.5" fill="#2DD4FF" fill-opacity="0.55"/>
-            <circle cx="470" cy="70" r="1.5" fill="#4F5BD5" fill-opacity="0.5"/>
-            <circle cx="460" cy="90" r="2" fill="#2DD4FF" fill-opacity="0.35"/>
-            <path d="M458 46 L470 70 L460 90" stroke="#2DD4FF" stroke-width="0.5" stroke-opacity="0.2" stroke-linejoin="round"/>
-            <!-- Floating dots bottom-left -->
-            <circle cx="14" cy="276" r="2.5" fill="#4F5BD5" fill-opacity="0.4"/>
-            <circle cx="22" cy="302" r="1.5" fill="#2DD4FF" fill-opacity="0.35"/>
-            <circle cx="10" cy="328" r="2" fill="#4F5BD5" fill-opacity="0.28"/>
-            <!-- Side rings -->
-            <circle cx="14" cy="140" r="20" stroke="#4F5BD5" stroke-width="1" stroke-opacity="0.1"/>
-            <circle cx="14" cy="140" r="10" stroke="#2DD4FF" stroke-width="0.5" stroke-opacity="0.07"/>
-            <circle cx="468" cy="292" r="30" stroke="#4F5BD5" stroke-width="1" stroke-opacity="0.09"/>
+          <svg class="hero__graphic-svg" viewBox="0 0 560 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Decorative rings -->
+            <circle cx="280" cy="220" r="260" stroke="#f97316" stroke-width="0.5" stroke-opacity="0.08"/>
+            <circle cx="280" cy="220" r="200" stroke="#f97316" stroke-width="0.5" stroke-opacity="0.05"/>
+            <circle cx="16" cy="170" r="24" stroke="#1e3a5f" stroke-width="1" stroke-opacity="0.12"/>
+            <circle cx="546" cy="356" r="36" stroke="#1e3a5f" stroke-width="1" stroke-opacity="0.09"/>
+
+            <!-- Mobile phone frame -->
+            <rect x="140" y="10" width="240" height="400" rx="28" fill="#171A21" stroke="#2A3140" stroke-width="2"/>
+            <!-- Screen area -->
+            <rect x="154" y="42" width="212" height="340" rx="4" fill="#ffffff"/>
+            <!-- Notch -->
+            <rect x="220" y="18" width="80" height="10" rx="5" fill="#2A3140"/>
+
+            <!-- Search bar -->
+            <rect x="168" y="58" width="184" height="32" rx="16" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+            <!-- Search icon -->
+            <circle cx="184" cy="74" r="6" stroke="#94a3b8" stroke-width="1.5" fill="none"/>
+            <line x1="189" y1="79" x2="192" y2="82" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round"/>
+            <!-- Search text -->
+            <text x="198" y="78" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#0f172a">plumber near me</text>
+
+            <!-- Search result card -->
+            <rect x="168" y="104" width="184" height="148" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+            <!-- Business icon circle -->
+            <circle cx="190" cy="128" r="14" fill="#0a1628"/>
+            <text x="190" y="133" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">P</text>
+            <!-- Business name -->
+            <text x="210" y="124" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#0a1628">Pro Plumbing Ltd</text>
+            <!-- Rating stars -->
+            <text x="210" y="139" font-family="Inter, sans-serif" font-size="11" fill="#f97316">&#9733;&#9733;&#9733;&#9733;&#9733;</text>
+            <text x="266" y="139" font-family="Inter, sans-serif" font-size="9" fill="#475569">5.0 (24)</text>
+            <!-- Description lines -->
+            <rect x="178" y="152" width="160" height="5" rx="2" fill="#94a3b8" fill-opacity="0.4"/>
+            <rect x="178" y="164" width="130" height="5" rx="2" fill="#94a3b8" fill-opacity="0.3"/>
+            <!-- Open now badge -->
+            <rect x="178" y="180" width="52" height="16" rx="8" fill="#15803d" fill-opacity="0.12"/>
+            <text x="190" y="192" font-family="Inter, sans-serif" font-size="8" font-weight="600" fill="#15803d">Open now</text>
+            <!-- Call button -->
+            <rect x="178" y="206" width="160" height="32" rx="8" fill="#f97316"/>
+            <text x="258" y="227" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">Call Now</text>
+
+            <!-- "New enquiry" toast — inside the phone screen -->
+            <rect x="164" y="268" width="192" height="48" rx="10" fill="#0a1628"/>
+            <circle cx="186" cy="292" r="12" fill="#f97316" fill-opacity="0.15"/>
+            <!-- Envelope icon -->
+            <rect x="180" y="287" width="12" height="9" rx="1.5" stroke="#f97316" stroke-width="1.2" fill="none"/>
+            <path d="M180 288 l6 5 6-5" stroke="#f97316" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <text x="204" y="288" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#e2e8f0">New enquiry received</text>
+            <text x="204" y="301" font-family="Inter, sans-serif" font-size="8" fill="#94a3b8">Just now</text>
+            <!-- Notification count badge -->
+            <circle cx="346" cy="274" r="10" fill="#f97316"/>
+            <text x="346" y="278" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">3</text>
+
+            <!-- Second notification hint — peeking below -->
+            <rect x="170" y="324" width="180" height="24" rx="8" fill="#0a1628" fill-opacity="0.5"/>
+            <rect x="186" y="332" width="80" height="5" rx="2" fill="#6F768A" fill-opacity="0.3"/>
+
+            <!-- Floating accent elements -->
+            <circle cx="100" cy="110" r="3.5" fill="#f97316" fill-opacity="0.4"/>
+            <circle cx="460" cy="90" r="2.5" fill="#f97316" fill-opacity="0.3"/>
+            <circle cx="88" cy="320" r="3" fill="#1e3a5f" fill-opacity="0.3"/>
+            <circle cx="476" cy="340" r="3.5" fill="#f97316" fill-opacity="0.35"/>
           </svg>
         </div>
 
@@ -229,6 +207,16 @@
           <li class="trust-bar__item">Google-ready — built for search visibility</li>
           <li class="trust-bar__item">UK-based — human support, real person</li>
           <li class="trust-bar__item">Fixed price — no surprise invoices</li>
+          <li class="trust-bar__item trust-bar__item--stars" aria-label="Rated 5 out of 5 on Google">
+            <svg class="trust-bar__star-icon" viewBox="0 0 80 16" fill="#f97316" aria-hidden="true">
+              <polygon points="8,1 10,6 16,6 11,9.5 13,15 8,11.5 3,15 5,9.5 0,6 6,6"/>
+              <polygon points="24,1 26,6 32,6 27,9.5 29,15 24,11.5 19,15 21,9.5 16,6 22,6"/>
+              <polygon points="40,1 42,6 48,6 43,9.5 45,15 40,11.5 35,15 37,9.5 32,6 38,6"/>
+              <polygon points="56,1 58,6 64,6 59,9.5 61,15 56,11.5 51,15 53,9.5 48,6 54,6"/>
+              <polygon points="72,1 74,6 80,6 75,9.5 77,15 72,11.5 67,15 69,9.5 64,6 70,6"/>
+            </svg>
+            5/5 on Google
+          </li>
         </ul>
       </div>
     </section>
@@ -280,28 +268,28 @@
             <div class="step__content">
               <span class="step__accent" aria-hidden="true"></span>
               <h3 class="step__title">Discovery</h3>
-              <p class="step__body">Tell us about your business, your customers, and what you want your website to do.</p>
+              <p class="step__body">Tell me about your business, your customers, and what you want your website to do.</p>
             </div>
           </li>
           <li class="step" data-reveal data-delay="1">
             <div class="step__content">
               <span class="step__accent" aria-hidden="true"></span>
               <h3 class="step__title">Design &amp; Build</h3>
-              <p class="step__body">We design and code your site from scratch, keeping you updated throughout.</p>
+              <p class="step__body">I design and code your site from scratch, keeping you updated throughout.</p>
             </div>
           </li>
           <li class="step" data-reveal data-delay="2">
             <div class="step__content">
               <span class="step__accent" aria-hidden="true"></span>
               <h3 class="step__title">Review &amp; Refine</h3>
-              <p class="step__body">You review the site, request changes, and we refine until it's exactly right.</p>
+              <p class="step__body">You review the site, request changes, and I refine until it's exactly right.</p>
             </div>
           </li>
           <li class="step" data-reveal data-delay="3">
             <div class="step__content">
               <span class="step__accent" aria-hidden="true"></span>
               <h3 class="step__title">Launch</h3>
-              <p class="step__body">We connect your domain and go live. Your site is fast, indexed by Google, and ready for customers.</p>
+              <p class="step__body">I connect your domain and go live. Your site is fast, indexed by Google, and ready for customers.</p>
             </div>
           </li>
         </ol>
@@ -320,7 +308,7 @@
             <p class="pricing-card__tier">Starter</p>
             <p class="pricing-card__price"><sup>£</sup>399</p>
             <p class="pricing-card__ideal">Ideal for sole traders who need an online presence</p>
-            <p class="pricing-card__feature">1-page bespoke layout, contact form, Google Maps, basic SEO</p>
+            <p class="pricing-card__feature">1-page website, contact form, Google Maps, built for search</p>
             <a href="/contact.html" class="button">Get Started</a>
           </li>
           <li class="pricing-card pricing-card--featured" data-reveal data-delay="1">
@@ -328,14 +316,14 @@
             <p class="pricing-card__tier">Business</p>
             <p class="pricing-card__price"><sup>£</sup>749</p>
             <p class="pricing-card__ideal">Ideal for small businesses ready to grow</p>
-            <p class="pricing-card__feature">Up to 4 pages, bespoke design, SEO, Google Analytics</p>
+            <p class="pricing-card__feature">Up to 4 pages, found on Google, tracks your visitors</p>
             <a href="/contact.html" class="button">Get Started</a>
           </li>
           <li class="pricing-card" data-reveal data-delay="2">
             <p class="pricing-card__tier">Professional</p>
             <p class="pricing-card__price"><sup>£</sup>1,299</p>
             <p class="pricing-card__ideal">Ideal for businesses focused on growth and visibility</p>
-            <p class="pricing-card__feature">Up to 8 pages, blog/portfolio, advanced SEO, performance optimised</p>
+            <p class="pricing-card__feature">Up to 8 pages, blog section, maximum Google visibility</p>
             <a href="/contact.html" class="button">Get Started</a>
           </li>
         </ul>
@@ -476,8 +464,8 @@
           </li>
           <li class="trades-more" data-reveal>
             <p class="trades-more__heading">Don't see your trade?</p>
-            <p class="trades-more__text">We also work with carpenters, HVAC engineers, plasterers, painters, tilers, fencers, pest control, locksmiths, cleaners, and more. If you work in a trade, we can build a site for you.</p>
-            <a href="/contact.html" class="button button--outline">Get in Touch</a>
+            <p class="trades-more__text">I also work with carpenters, HVAC engineers, plasterers, painters, tilers, fencers, pest control, locksmiths, cleaners, and more. If you work in a trade, I can build a site for you.</p>
+            <a href="/contact.html" class="button">Get in Touch</a>
           </li>
         </ul>
       </div>
@@ -492,7 +480,7 @@
           <a href="/contact.html" class="button button--large">Start the Conversation</a>
         </div>
         <div class="cta-band__phone">
-          <span class="cta-band__phone-label">Or call us directly</span>
+          <span class="cta-band__phone-label">Or call me directly</span>
           <!-- Replace 020 3488 7077 with your actual number -->
           <a href="tel:020 3488 7077" class="cta-band__phone-number">020 3488 7077</a>
         </div>

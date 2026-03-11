@@ -24,8 +24,8 @@
 
   /* --- Semantic backgrounds -------------------------------------------- */
   --color-bg:               #ffffff;
-  --color-bg-subtle:        #f8fafc;
-  --color-bg-muted:         #f1f5f9;
+  --color-bg-subtle:        #f9f8f6;
+  --color-bg-muted:         #f3f2ef;
   --color-bg-dark:          #0a1628;
 
   /* --- Text ------------------------------------------------------------ */
@@ -608,23 +608,9 @@
 
   .hero__graphic-svg {
     inline-size: 100%;
-    max-inline-size: 480px;
+    max-inline-size: 560px;
     block-size: auto;
   }
-
-  @keyframes cursor-blink {
-    0%, 100% { opacity: 1; }
-    50%       { opacity: 0; }
-  }
-
-  .cursor-blink {
-    animation: cursor-blink 1.2s ease-in-out infinite;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .cursor-blink { animation: none; }
-  }
-
 
   /* --- Trust bar ---------------------------------------------------------- */
 
@@ -663,6 +649,29 @@
     flex-shrink: 0;
   }
 
+  .trust-bar__item--stars::before {
+    display: none;
+  }
+
+  .trust-bar__star-icon {
+    inline-size: 5rem;
+    block-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  /* --- Star ratings (testimonials) ---------------------------------------- */
+
+  .testimonial-card__stars {
+    display: flex;
+    gap: var(--space-1);
+    margin-block-end: var(--space-3);
+  }
+
+  .testimonial-card__stars svg {
+    inline-size: 1rem;
+    block-size: 1rem;
+    fill: var(--color-accent);
+  }
 
   /* --- Section header ----------------------------------------------------- */
 
@@ -1433,12 +1442,12 @@
   .contact-info__note {
     font-size: var(--text-small);
     color: var(--color-text-muted);
-    margin-block-start: var(--space-6);
     padding: var(--space-4);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     border-inline-start: 3px solid var(--color-accent);
     max-inline-size: none;
+    margin-block-end: var(--space-6);
   }
 
 
@@ -1519,9 +1528,20 @@
     }
   }
 
+  .contact-layout aside {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-10);
+  }
+
   .contact-layout aside h2 {
     font-size: var(--text-h3);
     margin-block-end: var(--space-6);
+  }
+
+  .contact-layout aside h3 {
+    font-size: var(--text-h4);
+    margin-block-end: var(--space-4);
   }
 
 
@@ -2919,14 +2939,22 @@
   }
 
   .pricing__subscription-note {
-    font-size: var(--text-small);
-    color: var(--color-text-muted);
+    font-size: var(--text-body);
+    color: var(--color-text);
     text-align: center;
-    margin-top: var(--space-4);
+    margin-block-start: var(--space-6);
+    padding: var(--space-4) var(--space-6);
+    background-color: var(--color-bg-subtle);
+    border: 1px solid var(--color-border);
+    border-inline-start: 3px solid var(--color-accent);
+    border-radius: var(--radius-md);
+    max-inline-size: 36rem;
+    margin-inline: auto;
   }
 
   .pricing__subscription-note a {
     color: var(--color-accent);
+    font-weight: 600;
     text-decoration: none;
   }
 
