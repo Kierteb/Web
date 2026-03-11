@@ -61,6 +61,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://deepwaterdesign.co.uk/subscription.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://deepwaterdesign.co.uk/blog/why-your-trade-website-isnt-ranking.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>

@@ -2789,3 +2789,251 @@
     color: var(--color-accent);
   }
 }
+
+/* =======================================================================
+   SUBSCRIPTION PAGE
+   ======================================================================= */
+@layer subscription {
+
+  .subscription-comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+  }
+
+  @media (width < 48rem) {
+    .subscription-comparison {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .subscription-comparison__card {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+  }
+
+  .subscription-comparison__card h3 {
+    font-size: var(--text-h4);
+    color: var(--color-heading);
+    margin-bottom: var(--space-5);
+  }
+
+  .subscription-comparison__card--active {
+    border-color: var(--color-accent);
+    border-width: 2px;
+  }
+
+  .comparison-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .comparison-list li {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-3);
+    font-size: var(--text-base);
+    color: var(--color-text);
+    line-height: var(--leading-normal);
+  }
+
+  .comparison-list svg {
+    flex-shrink: 0;
+    width: 1rem;
+    height: 1rem;
+    color: var(--color-accent);
+    translate: 0 2px;
+  }
+
+  .subscription-comparison__link {
+    display: inline-block;
+    margin-top: var(--space-5);
+    font-size: var(--text-small);
+    font-weight: 600;
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .subscription-comparison__link:hover {
+    text-decoration: underline;
+  }
+
+  .pricing-card__period {
+    display: block;
+    font-size: var(--text-small);
+    color: var(--color-text-muted);
+    font-weight: 400;
+    margin-top: var(--space-1);
+  }
+
+  .pricing-card__note {
+    font-size: var(--text-xs);
+    color: var(--color-text-subtle);
+    text-align: center;
+    margin-top: var(--space-2);
+  }
+
+  .ownership-section {
+    border-left: 4px solid var(--color-accent);
+    padding-left: var(--space-8);
+  }
+
+  .subscription-callout {
+    background: var(--color-bg-subtle);
+    border-left: 4px solid var(--color-accent);
+    padding: var(--space-6) 0;
+  }
+
+  .subscription-callout__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-6);
+  }
+
+  @media (width < 48rem) {
+    .subscription-callout__inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  .subscription-callout__heading {
+    font-size: var(--text-h4);
+    font-weight: 700;
+    color: var(--color-heading);
+  }
+
+  .subscription-callout__desc {
+    color: var(--color-text-muted);
+    margin-top: var(--space-1);
+  }
+
+  .subscription-callout__inner .button {
+    flex-shrink: 0;
+  }
+
+  .pricing__subscription-note {
+    font-size: var(--text-small);
+    color: var(--color-text-muted);
+    text-align: center;
+    margin-top: var(--space-4);
+  }
+
+  .pricing__subscription-note a {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .pricing__subscription-note a:hover {
+    text-decoration: underline;
+  }
+
+  /* --- Ownership / cancellation cards ------------------------------------- */
+  .ownership-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+  }
+
+  @media (width < 48rem) {
+    .ownership-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .ownership-card {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+  }
+
+  .ownership-card h3 {
+    font-size: var(--text-h4);
+    color: var(--color-heading);
+    margin-bottom: var(--space-4);
+  }
+
+  .ownership-card p {
+    color: var(--color-text-muted);
+    line-height: var(--leading-normal);
+  }
+
+  .ownership-card p + p {
+    margin-top: var(--space-3);
+  }
+
+  .ownership-card--highlight {
+    border-color: var(--color-accent);
+    border-width: 2px;
+  }
+
+  .ownership-card__prices {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-4) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .ownership-card__prices li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-2) var(--space-4);
+    background: var(--color-bg-subtle);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-base);
+  }
+
+  .ownership-card__prices span {
+    color: var(--color-accent);
+    font-weight: 700;
+  }
+
+  /* --- Checklist grid (subscription "What's included" section) ------------ */
+  .lp-includes__checklist-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6) var(--space-10);
+  }
+
+  @media (width < 48rem) {
+    .lp-includes__checklist-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .lp-includes__checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .lp-includes__checklist li {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-3);
+    font-size: var(--text-base);
+    color: var(--color-text);
+    line-height: var(--leading-normal);
+  }
+
+  .lp-includes__checklist svg {
+    flex-shrink: 0;
+    width: 1rem;
+    height: 1rem;
+    color: var(--color-accent);
+    translate: 0 2px;
+  }
+
+}
