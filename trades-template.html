@@ -404,9 +404,13 @@
         <h2 id="enquiry-heading">[FORM_HEADING]</h2>
         <p class="lp-enquiry__subtext">Free quote. No obligation. I respond within 24 hours.</p>
 
-        <form class="enquiry-form" action="https://formspree.io/f/xdalwvge" method="post" novalidate>
+        <form class="enquiry-form" action="https://api.web3forms.com/submit" method="post" novalidate>
           <!-- [TRADE_VAR: PAGE_SOURCE] -->
           <input type="hidden" name="source_page" value="[PAGE_SOURCE]">
+          <input type="hidden" name="access_key" value="dc5b7d19-3ebe-43c3-8e77-5dd016576dab">
+          <input type="hidden" name="redirect" value="https://deepwaterdesign.co.uk/thank-you.html">
+          <input type="hidden" name="subject" value="New enquiry from deepwaterdesign.co.uk">
+          <input type="checkbox" name="botcheck" class="sr-only" style="display:none" tabindex="-1" autocomplete="off">
 
           <div class="form__field">
             <label for="name">Your name</label>
@@ -564,19 +568,11 @@
         try {
           const res = await fetch(form.action, {
             method: 'POST',
-            body: new FormData(form),
-            headers: { 'Accept': 'application/json' }
+            body: new FormData(form)
           });
 
           if (res.ok) {
-            form.hidden = true;
-            document.querySelector('.form__success').hidden = false;
-            if (typeof gtag !== 'undefined') {
-              gtag('event', 'form_submission', {
-                event_category: 'Lead',
-                event_label: document.querySelector('[name="source_page"]')?.value
-              });
-            }
+            window.location.href = '/thank-you.html';
           }
         } catch (err) {
           // Silent fail — form falls back to standard POST
