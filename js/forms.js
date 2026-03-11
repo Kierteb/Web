@@ -103,20 +103,7 @@ export function initForms() {
     })
     .then(function (res) {
       if (res.ok) {
-        // GA4 conversion event — imported into Google Ads
-        if (typeof gtag === 'function') {
-          gtag('event', 'form_submission', {
-            event_category: 'engagement',
-            event_label: 'contact_form'
-          });
-        }
-
-        if (successMsg) {
-          form.style.display = 'none';
-          successMsg.setAttribute('data-visible', 'true');
-        } else if (submitBtn) {
-          submitBtn.textContent = 'Enquiry Sent!';
-        }
+        window.location.href = '/thank-you.html';
       } else {
         if (submitBtn) {
           submitBtn.disabled = false;

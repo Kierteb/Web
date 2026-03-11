@@ -577,6 +577,17 @@
     align-items: center;
   }
 
+  .hero__actions .button {
+    width: 100%;
+    text-align: center;
+  }
+
+  @media (width >= 30rem) {
+    .hero__actions .button {
+      width: auto;
+    }
+  }
+
   /* Hero geometric accent */
   .hero__accent-bar {
     display: none;
@@ -591,9 +602,7 @@
   }
 
   .hero__graphic {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: none;
   }
 
   @media (width >= 64rem) {
@@ -602,20 +611,16 @@
     }
 
     .hero__graphic {
+      display: flex;
       justify-content: flex-end;
+      align-items: center;
     }
   }
 
   .hero__graphic-svg {
     inline-size: 100%;
-    max-inline-size: 320px;
+    max-inline-size: 560px;
     block-size: auto;
-  }
-
-  @media (width >= 64rem) {
-    .hero__graphic-svg {
-      max-inline-size: 560px;
-    }
   }
 
   /* --- Trust bar ---------------------------------------------------------- */
