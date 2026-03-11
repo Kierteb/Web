@@ -591,7 +591,9 @@
   }
 
   .hero__graphic {
-    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   @media (width >= 64rem) {
@@ -600,16 +602,20 @@
     }
 
     .hero__graphic {
-      display: flex;
       justify-content: flex-end;
-      align-items: center;
     }
   }
 
   .hero__graphic-svg {
     inline-size: 100%;
-    max-inline-size: 560px;
+    max-inline-size: 320px;
     block-size: auto;
+  }
+
+  @media (width >= 64rem) {
+    .hero__graphic-svg {
+      max-inline-size: 560px;
+    }
   }
 
   /* --- Trust bar ---------------------------------------------------------- */
