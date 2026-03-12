@@ -1769,31 +1769,31 @@
    ========================================================================== */
 
 .whatsapp-btn {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  z-index: 89;
-  width: 52px;
-  height: 52px;
-  background: #25D366;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
-  text-decoration: none;
+  position: fixed !important;
+  bottom: 24px !important;
+  right: 24px !important;
+  z-index: 9999 !important;
+  width: 52px !important;
+  height: 52px !important;
+  background: #25D366 !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none !important;
 }
 
 .whatsapp-btn:hover {
   transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.55);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.55) !important;
 }
 
 .whatsapp-btn svg {
-  width: 28px;
-  height: 28px;
-  fill: #ffffff;
+  width: 28px !important;
+  height: 28px !important;
+  fill: #ffffff !important;
 }
 
 /* ==========================================================================
