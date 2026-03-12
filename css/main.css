@@ -1994,11 +1994,16 @@
     }
     .lp-header__phone {
       font-size: 0;
-      padding: var(--space-2);
+      padding: 8px;
+      min-width: 40px;
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .lp-header__phone svg {
-      width: 1.5em;
-      height: 1.5em;
+      width: 20px;
+      height: 20px;
     }
   }
 
