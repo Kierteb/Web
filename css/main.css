@@ -1796,7 +1796,7 @@
   fill: #ffffff;
 }
 
-@media (width < 64rem) {
+@media (max-width: 63.999rem) {
   .whatsapp-btn {
     bottom: 72px;
   }
@@ -1810,7 +1810,7 @@
   display: none;
 }
 
-@media (width < 64rem) {
+@media (max-width: 63.999rem) {
   .mobile-call-bar {
     display: block;
     position: fixed;
