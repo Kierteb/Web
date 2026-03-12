@@ -1988,6 +1988,20 @@
     background: #e56a0e;
   }
 
+  @media (max-width: 479px) {
+    .lp-header__logo-text {
+      font-size: 0.8rem;
+    }
+    .lp-header__phone {
+      font-size: 0;
+      padding: var(--space-2);
+    }
+    .lp-header__phone svg {
+      width: 1.5em;
+      height: 1.5em;
+    }
+  }
+
   /* =======================================================================
      2. LP HERO — Dark hero section with dot pattern
      ======================================================================= */
