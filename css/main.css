@@ -1935,6 +1935,11 @@
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     padding: var(--space-3) 0;
+    transition: transform 0.3s ease;
+  }
+
+  .lp-header--hidden {
+    transform: translateY(-100%);
   }
 
   .lp-header .container {

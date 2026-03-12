@@ -704,6 +704,33 @@
       }
     })();
 
+    // Hide header on scroll down, show on scroll up (mobile only)
+    (function() {
+      const header = document.querySelector('.lp-header');
+      if (!header) return;
+      let lastY = 0;
+      let ticking = false;
+      window.addEventListener('scroll', function() {
+        if (!ticking) {
+          requestAnimationFrame(function() {
+            const y = window.scrollY;
+            if (window.innerWidth < 768) {
+              if (y > lastY && y > 60) {
+                header.classList.add('lp-header--hidden');
+              } else {
+                header.classList.remove('lp-header--hidden');
+              }
+            } else {
+              header.classList.remove('lp-header--hidden');
+            }
+            lastY = y;
+            ticking = false;
+          });
+          ticking = true;
+        }
+      });
+    })();
+
     // GA4 event tracking on phone links
     document.querySelectorAll('[data-ga-event]').forEach(el => {
       el.addEventListener('click', () => {
