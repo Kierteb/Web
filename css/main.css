@@ -1765,6 +1765,44 @@
 
 
 /* ==========================================================================
+   STICKY WHATSAPP BUTTON
+   ========================================================================== */
+
+.whatsapp-btn {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 89;
+  width: 52px;
+  height: 52px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  text-decoration: none;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.55);
+}
+
+.whatsapp-btn svg {
+  width: 28px;
+  height: 28px;
+  fill: #ffffff;
+}
+
+@media (width < 64rem) {
+  .whatsapp-btn {
+    bottom: 72px;
+  }
+}
+
+/* ==========================================================================
    STICKY MOBILE CALL BAR
    ========================================================================== */
 
