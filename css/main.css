@@ -1796,51 +1796,6 @@
   fill: #ffffff;
 }
 
-@media (max-width: 63.999rem) {
-  .whatsapp-btn {
-    bottom: 72px;
-  }
-}
-
-/* ==========================================================================
-   STICKY MOBILE CALL BAR
-   ========================================================================== */
-
-.mobile-call-bar {
-  display: none;
-}
-
-@media (max-width: 63.999rem) {
-  .mobile-call-bar {
-    display: block;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 90;
-    background: var(--color-brand-accent);
-    padding: var(--space-3) var(--space-4);
-    box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.2);
-  }
-
-  .mobile-call-bar__link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-2);
-    color: #ffffff;
-    font-weight: 800;
-    font-size: var(--text-body);
-    letter-spacing: var(--tracking-wide);
-    text-decoration: none;
-  }
-
-  /* Pad footer so it doesn't sit behind the call bar */
-  .site-footer {
-    padding-block-end: 60px;
-  }
-}
-
 /* ==========================================================================
    UTILITIES
    ========================================================================== */
