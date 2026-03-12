@@ -417,6 +417,7 @@
     transition: background var(--transition-base);
     flex-shrink: 0;
     letter-spacing: var(--tracking-wide);
+    text-decoration: none;
   }
 
   .nav__phone:hover {
