@@ -1055,6 +1055,14 @@
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
     border-inline-start: 3px solid var(--color-accent);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .testimonial figure {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
   }
 
   .testimonial blockquote {
@@ -1080,6 +1088,7 @@
     display: flex;
     flex-direction: column;
     gap: var(--space-1);
+    margin-block-start: auto;
   }
 
   .testimonial__name {
