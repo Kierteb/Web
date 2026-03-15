@@ -321,10 +321,24 @@
     background-color: rgb(10, 22, 40);
     border-block-end: 1px solid rgba(255, 255, 255, 0.08);
     contain: layout;
+    transition: padding 300ms ease, box-shadow 300ms ease;
   }
 
   .site-header .container {
     padding-block: var(--space-4);
+    transition: padding-block 300ms ease;
+  }
+
+  .site-header.site-header--scrolled .container {
+    padding-block: var(--space-2);
+  }
+
+  .site-header--scrolled {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .site-header--scrolled .nav__logo img {
+    block-size: 2.5rem;
   }
 
 
@@ -349,6 +363,7 @@
   .nav__logo img {
     block-size: 3.5rem;
     inline-size: auto;
+    transition: block-size 300ms ease;
   }
 
   .nav__logo-text {
@@ -389,6 +404,22 @@
     text-transform: uppercase;
     transition: color var(--transition-base);
     white-space: nowrap;
+    position: relative;
+  }
+
+  .nav__list a::after {
+    content: '';
+    position: absolute;
+    inset-block-end: -4px;
+    inset-inline-start: 0;
+    inline-size: 0;
+    block-size: 2px;
+    background-color: var(--color-accent);
+    transition: inline-size 300ms ease;
+  }
+
+  .nav__list a:hover::after {
+    inline-size: 100%;
   }
 
   .nav__list a:hover,
@@ -398,6 +429,10 @@
 
   .nav__list [aria-current="page"] {
     color: var(--color-accent);
+  }
+
+  .nav__list [aria-current="page"]::after {
+    inline-size: 100%;
   }
 
   .nav__cta {
@@ -651,6 +686,24 @@
     inline-size: 100%;
     max-inline-size: 560px;
     block-size: auto;
+    animation: heroFadeIn 800ms ease 300ms both;
+  }
+
+  @keyframes heroFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero__graphic-svg {
+      animation: none;
+    }
   }
 
   /* --- Trust bar ---------------------------------------------------------- */
@@ -659,13 +712,47 @@
     background-color: var(--color-surface);
     border-block: 1px solid var(--color-border);
     padding-block: var(--space-6);
+    overflow: hidden;
   }
 
   .trust-bar__list {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap;
     gap: var(--space-8);
+    animation: marquee 30s linear infinite;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  .trust-bar__dupe {
+    /* visible on mobile for seamless marquee loop */
+  }
+
+  @media (width >= 64rem) {
+    .trust-bar__list {
+      flex-wrap: wrap;
+      justify-content: center;
+      animation: none;
+    }
+
+    .trust-bar__dupe {
+      display: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .trust-bar__list {
+      animation: none;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .trust-bar__dupe {
+      display: none;
+    }
   }
 
   .trust-bar__item {
@@ -678,6 +765,8 @@
     text-transform: uppercase;
     color: var(--color-text-muted);
     max-inline-size: none;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .trust-bar__item::before {
@@ -751,14 +840,17 @@
     background-color: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
     transition:
       border-color var(--transition-slow),
-      transform var(--transition-slow);
+      transform var(--transition-slow),
+      box-shadow var(--transition-slow);
   }
 
   .card:hover {
     border-color: var(--color-border-strong);
-    transform: translateY(-2px);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   }
 
   .card__icon {
@@ -812,12 +904,14 @@
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
     position: relative;
-    transition: border-color var(--transition-slow), transform var(--transition-slow);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    transition: border-color var(--transition-slow), transform var(--transition-slow), box-shadow var(--transition-slow);
   }
 
   .pricing-card:hover {
     border-color: var(--color-border-strong);
-    transform: translateY(-2px);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   }
 
   .pricing-card--featured {

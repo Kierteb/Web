@@ -218,6 +218,22 @@
             </svg>
             5/5 on Google
           </li>
+          <!-- Duplicated items for seamless marquee on mobile -->
+          <li class="trust-bar__item trust-bar__dupe" aria-hidden="true">Hand-coded from scratch — no templates</li>
+          <li class="trust-bar__item trust-bar__dupe" aria-hidden="true">Mobile-first — works on every device</li>
+          <li class="trust-bar__item trust-bar__dupe" aria-hidden="true">Google-ready — built for search visibility</li>
+          <li class="trust-bar__item trust-bar__dupe" aria-hidden="true">UK-based — human support, real person</li>
+          <li class="trust-bar__item trust-bar__dupe" aria-hidden="true">Fixed price — no surprise invoices</li>
+          <li class="trust-bar__item trust-bar__dupe trust-bar__item--stars" aria-hidden="true">
+            <svg class="trust-bar__star-icon" viewBox="0 0 80 16" fill="#f97316" aria-hidden="true">
+              <polygon points="8,1 10,6 16,6 11,9.5 13,15 8,11.5 3,15 5,9.5 0,6 6,6"/>
+              <polygon points="24,1 26,6 32,6 27,9.5 29,15 24,11.5 19,15 21,9.5 16,6 22,6"/>
+              <polygon points="40,1 42,6 48,6 43,9.5 45,15 40,11.5 35,15 37,9.5 32,6 38,6"/>
+              <polygon points="56,1 58,6 64,6 59,9.5 61,15 56,11.5 51,15 53,9.5 48,6 54,6"/>
+              <polygon points="72,1 74,6 80,6 75,9.5 77,15 72,11.5 67,15 69,9.5 64,6 70,6"/>
+            </svg>
+            5/5 on Google
+          </li>
         </ul>
       </div>
     </section>
@@ -307,7 +323,7 @@
         <ul class="card-grid card-grid--3col" role="list">
           <li class="pricing-card" data-reveal>
             <p class="pricing-card__tier">Starter</p>
-            <p class="pricing-card__price"><sup>£</sup>399</p>
+            <p class="pricing-card__price"><sup>£</sup><span data-count="399">399</span></p>
             <p class="pricing-card__ideal">Ideal for sole traders who need an online presence</p>
             <p class="pricing-card__feature">1-page website, contact form, Google Maps, built for search</p>
             <a href="/contact.html" class="button">Get Started</a>
@@ -315,14 +331,14 @@
           <li class="pricing-card pricing-card--featured" data-reveal data-delay="1">
             <p class="pricing-card__badge" aria-label="Most popular package">Most Popular</p>
             <p class="pricing-card__tier">Business</p>
-            <p class="pricing-card__price"><sup>£</sup>749</p>
+            <p class="pricing-card__price"><sup>£</sup><span data-count="749">749</span></p>
             <p class="pricing-card__ideal">Ideal for small businesses ready to grow</p>
             <p class="pricing-card__feature">Up to 4 pages, found on Google, tracks your visitors</p>
             <a href="/contact.html" class="button">Get Started</a>
           </li>
           <li class="pricing-card" data-reveal data-delay="2">
             <p class="pricing-card__tier">Professional</p>
-            <p class="pricing-card__price"><sup>£</sup>1,299</p>
+            <p class="pricing-card__price"><sup>£</sup><span data-count="1299">1,299</span></p>
             <p class="pricing-card__ideal">Ideal for businesses focused on growth and visibility</p>
             <p class="pricing-card__feature">Up to 8 pages, blog section, maximum Google visibility</p>
             <a href="/contact.html" class="button">Get Started</a>
@@ -593,6 +609,40 @@
     initNav();
     initScrollReveal();
     initTracking();
+
+    // Pricing counter animation
+    (function() {
+      var counters = document.querySelectorAll('[data-count]');
+      if (!counters.length || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      var animated = false;
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting && !animated) {
+            animated = true;
+            counters.forEach(function(el) {
+              var target = parseInt(el.getAttribute('data-count'), 10);
+              var duration = 1200;
+              var start = performance.now();
+
+              function tick(now) {
+                var elapsed = now - start;
+                var progress = Math.min(elapsed / duration, 1);
+                var eased = 1 - Math.pow(1 - progress, 3);
+                var current = Math.round(eased * target);
+                el.textContent = current.toLocaleString('en-GB');
+                if (progress < 1) requestAnimationFrame(tick);
+              }
+              requestAnimationFrame(tick);
+            });
+            observer.disconnect();
+          }
+        });
+      }, { threshold: 0.3 });
+
+      var pricingSection = document.getElementById('pricing');
+      if (pricingSection) observer.observe(pricingSection);
+    })();
 
     // GA4 phone click tracking
     document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {

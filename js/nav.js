@@ -75,9 +75,30 @@ export function initNav() {
     }
   });
 
+  // Shrink header on scroll
+  initShrinkHeader();
+
   // Scroll spy — updates aria-current when nav links point to
   // sections on the current page via hash anchors
   initScrollSpy(navList);
+}
+
+
+function initShrinkHeader() {
+  'use strict';
+
+  var header = document.querySelector('.site-header');
+  if (!header) return;
+
+  var scrollThreshold = 60;
+
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > scrollThreshold) {
+      header.classList.add('site-header--scrolled');
+    } else {
+      header.classList.remove('site-header--scrolled');
+    }
+  }, { passive: true });
 }
 
 
