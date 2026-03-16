@@ -728,7 +728,13 @@
   }
 
   .trust-bar__dupe {
-    /* visible on mobile for seamless marquee loop */
+    display: none;
+  }
+
+  @media (width < 64rem) {
+    .trust-bar__dupe {
+      display: flex;
+    }
   }
 
   @media (width >= 64rem) {
