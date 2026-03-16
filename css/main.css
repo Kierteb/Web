@@ -727,25 +727,25 @@
     to   { transform: translateX(-50%); }
   }
 
+  .trust-bar__list {
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: none;
+  }
+
   .trust-bar__dupe {
     display: none;
   }
 
-  @media (width < 64rem) {
+  @media (max-width: 63.999rem) {
+    .trust-bar__list {
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      animation: marquee 30s linear infinite;
+    }
+
     .trust-bar__dupe {
       display: flex;
-    }
-  }
-
-  @media (width >= 64rem) {
-    .trust-bar__list {
-      flex-wrap: wrap;
-      justify-content: center;
-      animation: none;
-    }
-
-    .trust-bar__dupe {
-      display: none;
     }
   }
 
