@@ -733,19 +733,11 @@
     animation: none;
   }
 
-  .trust-bar__dupe {
-    display: none;
-  }
-
   @media (max-width: 63.999rem) {
     .trust-bar__list {
       flex-wrap: nowrap;
       justify-content: flex-start;
       animation: marquee 30s linear infinite;
-    }
-
-    .trust-bar__dupe {
-      display: flex;
     }
   }
 
@@ -754,10 +746,6 @@
       animation: none;
       flex-wrap: wrap;
       justify-content: center;
-    }
-
-    .trust-bar__dupe {
-      display: none;
     }
   }
 
