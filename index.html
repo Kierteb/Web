@@ -33,6 +33,222 @@
   <!-- Styles -->
   <link rel="stylesheet" href="/css/main.css">
 
+  <!-- Calculator styles -->
+  <style>
+    .calc {
+      max-width: 40rem;
+      margin-inline: auto;
+    }
+
+    .calc__packages {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+      margin-block-end: var(--space-8);
+    }
+
+    .calc__package {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-6) var(--space-4);
+      border: 2px solid var(--color-border-strong);
+      border-radius: var(--radius-lg);
+      background: var(--color-bg);
+      cursor: pointer;
+      transition: border-color var(--transition-base), background var(--transition-base);
+    }
+
+    .calc__package:hover {
+      border-color: var(--color-accent);
+    }
+
+    .calc__package.active {
+      border-color: var(--color-accent);
+      background: rgba(249, 115, 22, 0.06);
+    }
+
+    .calc__package-name {
+      font-size: var(--text-body);
+      font-weight: 700;
+      color: var(--color-heading);
+    }
+
+    .calc__package-pages {
+      font-size: var(--text-small);
+      color: var(--color-text-muted);
+    }
+
+    .calc__deposit-section {
+      margin-block-end: var(--space-10);
+    }
+
+    .calc__deposit-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-block-end: var(--space-3);
+      font-weight: 600;
+      color: var(--color-heading);
+    }
+
+    .calc__deposit-value {
+      font-size: var(--text-h3);
+      font-weight: 800;
+      color: var(--color-accent);
+    }
+
+    .calc__slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 8px;
+      border-radius: var(--radius-pill);
+      background: var(--color-bg-muted);
+      outline: none;
+      cursor: pointer;
+    }
+
+    .calc__slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      border: 3px solid var(--color-bg);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: transform var(--transition-fast);
+    }
+
+    .calc__slider::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    .calc__slider::-moz-range-thumb {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      border: 3px solid var(--color-bg);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+
+    .calc__deposit-input-row {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      margin-block-start: var(--space-4);
+    }
+
+    .calc__deposit-input {
+      width: 8rem;
+      padding: var(--space-2) var(--space-3);
+      border: 2px solid var(--color-border-strong);
+      border-radius: var(--radius-md);
+      font-family: var(--font-sans);
+      font-size: var(--text-body);
+      font-weight: 600;
+      color: var(--color-heading);
+      text-align: center;
+    }
+
+    .calc__deposit-input:focus {
+      outline: none;
+      border-color: var(--color-accent);
+    }
+
+    .calc__deposit-hint {
+      font-size: var(--text-small);
+      color: var(--color-text-muted);
+    }
+
+    .calc__results {
+      background: var(--color-bg-dark);
+      border-radius: var(--radius-lg);
+      padding: var(--space-8);
+      color: var(--color-text-on-dark);
+    }
+
+    .calc__results-heading {
+      font-size: var(--text-h3);
+      font-weight: 700;
+      color: var(--color-white);
+      margin-block-end: var(--space-6);
+    }
+
+    .calc__results-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-6);
+    }
+
+    .calc__result-item {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+    }
+
+    .calc__result-label {
+      font-size: var(--text-small);
+      color: var(--color-text-on-dark);
+      opacity: 0.7;
+    }
+
+    .calc__result-value {
+      font-size: var(--text-h2);
+      font-weight: 800;
+      color: var(--color-white);
+    }
+
+    .calc__result-value--accent {
+      color: var(--color-accent);
+    }
+
+    .calc__result-item--buyout {
+      grid-column: 1 / -1;
+      border-block-start: 1px solid rgba(255, 255, 255, 0.1);
+      padding-block-start: var(--space-6);
+      margin-block-start: var(--space-2);
+    }
+
+    .calc__buyout-note {
+      margin-block-start: var(--space-2);
+      font-size: var(--text-small);
+      color: var(--color-text-on-dark);
+      opacity: 0.6;
+    }
+
+    .calc__results-note {
+      margin-block-start: var(--space-6);
+      font-size: var(--text-small);
+      color: var(--color-text-on-dark);
+      opacity: 0.6;
+    }
+
+    .calc__cta {
+      margin-block-start: var(--space-8);
+      text-align: center;
+    }
+
+    @media (max-width: 40em) {
+      .calc__packages {
+        grid-template-columns: 1fr;
+      }
+
+      .calc__results-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .calc__result-item--buyout {
+        grid-column: 1;
+      }
+    }
+  </style>
+
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CWGY73NC0C"></script>
   <script>
@@ -124,7 +340,7 @@
           <p class="hero__subtext">Hand-coded from scratch. Built for UK trades businesses. Fixed price. Live in 5 days.</p>
           <div class="hero__actions">
             <a href="tel:02034887077" class="button button--large">Call 020 3488 7077</a>
-            <a href="#pricing" class="button button--outline button--large">See Packages</a>
+            <a href="#pricing" class="button button--outline button--large">See Monthly Prices</a>
           </div>
         </div>
 
@@ -297,12 +513,99 @@
       </div>
     </section>
 
+    <!-- ===== SPREAD THE COST CALCULATOR ===== -->
+    <section class="bg-surface" id="pricing" aria-labelledby="calc-heading">
+      <div class="container">
+        <div class="calc">
+
+          <div class="section-header">
+            <span class="section-header__kicker">Spread the cost</span>
+            <h2 id="calc-heading">Monthly Payment Calculator</h2>
+            <p style="max-width: 36rem; margin-inline: auto; color: var(--color-text-muted);">Choose your deposit and see your monthly payments instantly. Hosting, maintenance and support included.</p>
+          </div>
+
+          <!-- Package selector -->
+          <div class="calc__packages" role="radiogroup" aria-label="Select a package">
+            <button type="button" class="calc__package active" data-total="499" aria-pressed="true">
+              <span class="calc__package-name">Starter</span>
+              <span class="calc__package-pages">1 page</span>
+            </button>
+            <button type="button" class="calc__package" data-total="936" aria-pressed="false">
+              <span class="calc__package-name">Business</span>
+              <span class="calc__package-pages">Up to 4 pages</span>
+            </button>
+            <button type="button" class="calc__package" data-total="1624" aria-pressed="false">
+              <span class="calc__package-name">Professional</span>
+              <span class="calc__package-pages">Up to 8 pages</span>
+            </button>
+          </div>
+
+          <!-- Deposit slider -->
+          <div class="calc__deposit-section">
+            <div class="calc__deposit-label">
+              <span>Your deposit</span>
+              <span class="calc__deposit-value" id="depositDisplay">£0</span>
+            </div>
+            <input
+              type="range"
+              class="calc__slider"
+              id="depositSlider"
+              min="0"
+              max="400"
+              step="10"
+              value="0"
+              aria-label="Deposit amount"
+            >
+            <div class="calc__deposit-input-row">
+              <span class="calc__deposit-hint">Or type an amount:</span>
+              <input
+                type="text"
+                class="calc__deposit-input"
+                id="depositInput"
+                value="£0"
+                inputmode="numeric"
+                aria-label="Deposit amount"
+              >
+            </div>
+          </div>
+
+          <!-- Results -->
+          <div class="calc__results" aria-live="polite">
+            <p class="calc__results-heading">Your payment breakdown</p>
+
+            <div class="calc__results-grid">
+              <div class="calc__result-item">
+                <span class="calc__result-label">Deposit</span>
+                <span class="calc__result-value" id="resultDeposit">£0</span>
+              </div>
+              <div class="calc__result-item">
+                <span class="calc__result-label">12 monthly payments of</span>
+                <span class="calc__result-value calc__result-value--accent" id="resultMonthly">£33.27</span>
+              </div>
+              <div class="calc__result-item calc__result-item--buyout">
+                <span class="calc__result-label">Buyout fee (optional)</span>
+                <span class="calc__result-value" id="resultBuyout">£99.80</span>
+                <p class="calc__buyout-note">Pay the buyout fee at any point after 12 months to own your website outright. If you prefer not to buy out, your subscription continues rolling monthly.</p>
+              </div>
+            </div>
+
+            <p class="calc__results-note">12-month minimum term. All prices exclude VAT. Hosting, maintenance and support included.</p>
+          </div>
+
+          <div class="calc__cta">
+            <a href="/contact.html" class="button button--large">Get Started</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <!-- ===== PRICING SNAPSHOT ===== -->
-    <section class="bg-surface" id="pricing" aria-labelledby="pricing-heading">
+    <section id="one-off-pricing" aria-labelledby="pricing-heading">
       <div class="container">
         <div class="section-header">
-          <span class="section-header__kicker">Pricing</span>
-          <h2 id="pricing-heading">Fixed prices. No surprises.</h2>
+          <span class="section-header__kicker">One-off pricing</span>
+          <h2 id="pricing-heading">Prefer to pay upfront? Fixed prices. No surprises.</h2>
         </div>
         <ul class="card-grid card-grid--3col" role="list">
           <li class="pricing-card" data-reveal>
@@ -333,8 +636,8 @@
           <a href="/services.html#pricing">See full pricing &rarr;</a>
         </p>
         <p class="pricing__subscription-note">
-          Prefer to spread the cost?
-          <a href="/subscription.html">Spread the cost with a monthly plan &rarr;</a>
+          Want to spread the cost instead?
+          <a href="#pricing">Use the monthly payment calculator above &uarr;</a>
         </p>
       </div>
     </section>
@@ -637,6 +940,101 @@
         });
       });
     });
+  </script>
+
+  <!-- Calculator logic -->
+  <script>
+    (function() {
+      var packages = {
+        starter:      { total: 499  },
+        business:     { total: 936  },
+        professional: { total: 1624 }
+      };
+
+      var currentPackage = 'starter';
+      var deposit = 0;
+
+      var buttons = document.querySelectorAll('.calc__package');
+      var slider = document.getElementById('depositSlider');
+      var depositDisplay = document.getElementById('depositDisplay');
+      var depositInput = document.getElementById('depositInput');
+
+      function fmt(n) {
+        return '£' + n.toFixed(2).replace(/\.00$/, '').replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      }
+
+      function updateSliderMax() {
+        var pkg = packages[currentPackage];
+        var max = Math.floor(pkg.total * 0.9);
+        max = Math.floor(max / 10) * 10;
+        slider.max = max;
+        if (deposit > max) {
+          deposit = max;
+          slider.value = deposit;
+        }
+      }
+
+      function calculate() {
+        var pkg = packages[currentPackage];
+        var remaining = pkg.total - deposit;
+        var monthly = remaining / 12;
+        var buyout = monthly * 3;
+
+        depositDisplay.textContent = fmt(deposit);
+        depositInput.value = fmt(deposit);
+        document.getElementById('resultDeposit').textContent = fmt(deposit);
+        document.getElementById('resultMonthly').textContent = fmt(monthly);
+        document.getElementById('resultBuyout').textContent = fmt(buyout);
+      }
+
+      buttons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          buttons.forEach(function(b) {
+            b.classList.remove('active');
+            b.setAttribute('aria-pressed', 'false');
+          });
+          btn.classList.add('active');
+          btn.setAttribute('aria-pressed', 'true');
+
+          var name = btn.querySelector('.calc__package-name').textContent.toLowerCase();
+          currentPackage = name;
+          updateSliderMax();
+          calculate();
+        });
+      });
+
+      slider.addEventListener('input', function() {
+        deposit = parseInt(this.value, 10);
+        calculate();
+      });
+
+      depositInput.addEventListener('focus', function() {
+        var raw = this.value.replace(/[^0-9]/g, '');
+        this.value = raw;
+        this.select();
+      });
+
+      depositInput.addEventListener('blur', function() {
+        var raw = parseInt(this.value.replace(/[^0-9]/g, ''), 10);
+        if (isNaN(raw) || raw < 0) raw = 0;
+        var max = parseInt(slider.max, 10);
+        if (raw > max) raw = max;
+        raw = Math.round(raw / 10) * 10;
+        deposit = raw;
+        slider.value = deposit;
+        calculate();
+      });
+
+      depositInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          this.blur();
+        }
+      });
+
+      updateSliderMax();
+      calculate();
+    })();
   </script>
 
   <!-- Sticky WhatsApp button -->
