@@ -123,7 +123,7 @@
           <p class="hero__subtext">Hand-coded from scratch. Built for UK trades businesses. Fixed price. Live in 5 days.</p>
           <div class="hero__actions">
             <a href="tel:02034887077" class="button button--large">Call 020 3488 7077</a>
-            <a href="#pricing" class="button button--outline button--large">See Monthly Prices</a>
+            <a href="#one-off-pricing" class="button button--outline button--large">See Pricing</a>
           </div>
         </div>
 
@@ -221,100 +221,16 @@
       </div>
     </section>
 
-    <!-- ===== SPREAD THE COST CALCULATOR ===== -->
-    <section class="bg-surface" id="pricing" aria-labelledby="calc-heading">
-      <div class="container">
-        <div class="calc">
-
-          <div class="section-header">
-            <span class="section-header__kicker">Spread the cost</span>
-            <h2 id="calc-heading">Monthly Payment Calculator</h2>
-            <p style="max-width: 36rem; margin-inline: auto; color: var(--color-text-muted);">Choose your deposit and see your monthly payments instantly. Hosting, maintenance and support included.</p>
-          </div>
-
-          <!-- Package selector -->
-          <div class="calc__packages" role="radiogroup" aria-label="Select a package">
-            <button type="button" class="calc__package active" data-total="499" aria-pressed="true">
-              <span class="calc__package-name">Starter</span>
-              <span class="calc__package-pages">1 page</span>
-            </button>
-            <button type="button" class="calc__package" data-total="936" aria-pressed="false">
-              <span class="calc__package-name">Business</span>
-              <span class="calc__package-pages">Up to 4 pages</span>
-            </button>
-            <button type="button" class="calc__package" data-total="1624" aria-pressed="false">
-              <span class="calc__package-name">Professional</span>
-              <span class="calc__package-pages">Up to 8 pages</span>
-            </button>
-          </div>
-
-          <!-- Deposit slider -->
-          <div class="calc__deposit-section">
-            <div class="calc__deposit-label">
-              <span>Your deposit</span>
-              <span class="calc__deposit-value" id="depositDisplay">£0</span>
-            </div>
-            <input
-              type="range"
-              class="calc__slider"
-              id="depositSlider"
-              min="0"
-              max="400"
-              step="10"
-              value="0"
-              aria-label="Deposit amount"
-            >
-            <div class="calc__deposit-input-row">
-              <span class="calc__deposit-hint">Or type an amount:</span>
-              <input
-                type="text"
-                class="calc__deposit-input"
-                id="depositInput"
-                value="£0"
-                inputmode="numeric"
-                aria-label="Deposit amount"
-              >
-            </div>
-          </div>
-
-          <!-- Results -->
-          <div class="calc__results" aria-live="polite">
-            <p class="calc__results-heading">Your payment breakdown</p>
-
-            <div class="calc__results-grid">
-              <div class="calc__result-item">
-                <span class="calc__result-label">Deposit</span>
-                <span class="calc__result-value" id="resultDeposit">£0</span>
-              </div>
-              <div class="calc__result-item">
-                <span class="calc__result-label">12 monthly payments of</span>
-                <span class="calc__result-value calc__result-value--accent" id="resultMonthly">£33.27</span>
-              </div>
-              <div class="calc__result-item calc__result-item--buyout">
-                <span class="calc__result-label">Buyout fee (optional)</span>
-                <span class="calc__result-value" id="resultBuyout">£99.80</span>
-                <p class="calc__buyout-note">Pay the buyout fee at any point after 12 months to own your website outright. If you prefer not to buy out, your subscription continues rolling monthly.</p>
-              </div>
-            </div>
-
-            <p class="calc__results-note">12-month minimum term. All prices exclude VAT. Hosting, maintenance and support included.</p>
-          </div>
-
-          <div class="calc__cta">
-            <a href="/contact.html" class="button button--large">Get Started</a>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
     <!-- ===== PRICING SNAPSHOT ===== -->
     <section id="one-off-pricing" aria-labelledby="pricing-heading">
       <div class="container">
         <div class="section-header">
-          <span class="section-header__kicker">One-off pricing</span>
-          <h2 id="pricing-heading">Prefer to pay upfront? Fixed prices. No surprises.</h2>
+          <span class="section-header__kicker">Pricing</span>
+          <h2 id="pricing-heading">Fixed prices. No surprises.</h2>
         </div>
+        <p class="pricing__subscription-note">
+          Every package includes <strong>1 year of free hosting and support</strong>.
+        </p>
         <ul class="card-grid card-grid--3col" role="list">
           <li class="pricing-card" data-reveal>
             <p class="pricing-card__tier">Starter</p>
@@ -340,10 +256,6 @@
           </li>
         </ul>
         <p class="pricing-note">All prices exclude VAT. Payment terms confirmed in writing before work begins.</p>
-        <p class="pricing__subscription-note">
-          Want to spread the cost instead?
-          <a href="#pricing">Use the monthly payment calculator above &uarr;</a>
-        </p>
       </div>
     </section>
 
@@ -768,101 +680,6 @@
         });
       });
     });
-  </script>
-
-  <!-- Calculator logic -->
-  <script>
-    (function() {
-      var packages = {
-        starter:      { total: 499  },
-        business:     { total: 936  },
-        professional: { total: 1624 }
-      };
-
-      var currentPackage = 'starter';
-      var deposit = 0;
-
-      var buttons = document.querySelectorAll('.calc__package');
-      var slider = document.getElementById('depositSlider');
-      var depositDisplay = document.getElementById('depositDisplay');
-      var depositInput = document.getElementById('depositInput');
-
-      function fmt(n) {
-        return '£' + n.toFixed(2).replace(/\.00$/, '').replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-      }
-
-      function updateSliderMax() {
-        var pkg = packages[currentPackage];
-        var max = Math.floor(pkg.total * 0.9);
-        max = Math.floor(max / 10) * 10;
-        slider.max = max;
-        if (deposit > max) {
-          deposit = max;
-          slider.value = deposit;
-        }
-      }
-
-      function calculate() {
-        var pkg = packages[currentPackage];
-        var remaining = pkg.total - deposit;
-        var monthly = remaining / 12;
-        var buyout = monthly * 3;
-
-        depositDisplay.textContent = fmt(deposit);
-        depositInput.value = fmt(deposit);
-        document.getElementById('resultDeposit').textContent = fmt(deposit);
-        document.getElementById('resultMonthly').textContent = fmt(monthly);
-        document.getElementById('resultBuyout').textContent = fmt(buyout);
-      }
-
-      buttons.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          buttons.forEach(function(b) {
-            b.classList.remove('active');
-            b.setAttribute('aria-pressed', 'false');
-          });
-          btn.classList.add('active');
-          btn.setAttribute('aria-pressed', 'true');
-
-          var name = btn.querySelector('.calc__package-name').textContent.toLowerCase();
-          currentPackage = name;
-          updateSliderMax();
-          calculate();
-        });
-      });
-
-      slider.addEventListener('input', function() {
-        deposit = parseInt(this.value, 10);
-        calculate();
-      });
-
-      depositInput.addEventListener('focus', function() {
-        var raw = this.value.replace(/[^0-9]/g, '');
-        this.value = raw;
-        this.select();
-      });
-
-      depositInput.addEventListener('blur', function() {
-        var raw = parseInt(this.value.replace(/[^0-9]/g, ''), 10);
-        if (isNaN(raw) || raw < 0) raw = 0;
-        var max = parseInt(slider.max, 10);
-        if (raw > max) raw = max;
-        raw = Math.round(raw / 10) * 10;
-        deposit = raw;
-        slider.value = deposit;
-        calculate();
-      });
-
-      depositInput.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter') {
-          e.preventDefault();
-          this.blur();
-        }
-      });
-
-      updateSliderMax();
-      calculate();
-    })();
   </script>
 
   <!-- Sticky WhatsApp button -->
